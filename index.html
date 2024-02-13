@@ -1,55 +1,105 @@
 <!DOCTYPE html>
 <html>
-<style>
-/* Remove default bullets */
-ul, #myUL {
-  list-style-type: none;
-}
 
-/* Remove margins and padding from the parent ul */
-#myUL {
-  margin: 0;
-  padding: 0;
-}
-
-/* Style the caret/arrow */
-.caret {
-  cursor: pointer;
-  user-select: none; /* Prevent text selection */
-}
-
-/* Create the caret/arrow with a unicode, and style it */
-.caret::before {
-  content: "\25B6";
-  color: black;
-  display: inline-block;
-  margin-right: 6px;
-}
-
-/* Rotate the caret/arrow icon when clicked on (using JavaScript) */
-.caret-down::before {
-  transform: rotate(90deg);
-}
-
-/* Hide the nested list */
-.nested {
-  display: none;
-}
-
-/* Show the nested list when the user clicks on the caret/arrow (with JavaScript) */
-.active {
-  display: block;
-}
-
-/* When clicked on, add a background color and strike out text */
-ul li.checked {
-  background: #888;
-  color: #fff;
-  text-decoration: line-through;
-}
-</style>
+<head><link href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css" rel="stylesheet" type="text/css"><link href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css" rel="stylesheet" type="text/css"><link href="./assets/plugins/plugin-css/plugin-blazy.min.css" rel="stylesheet" type="text/css"><link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css" rel="stylesheet" type="text/css">
+<title>Hackunter</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="author" content="@DedSec-47">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+<link href="https://dedsec-47.github.io/WebChecklist/assets/css/style.css" rel="stylesheet">
+<script src="https://kit.fontawesome.com/f750f9d33e.js" crossorigin="anonymous"></script><style media="all" id="fa-kit-upload"></style><style media="all" id="fa-v4-font-face">
+	<script src="https://dedsec-47.github.io/WebChecklist/assets/js/script.js" crossorigin="anonymous"></script>
+    </style>
+</head>
 <body>
 
+  <div id="header" style="background:#343a40 !important;">
+<div style="visibility: hidden; display: none; width: 1349px; height: 173px; margin: 0px; float: none; position: static; inset: 0px auto auto;"></div><div data-toggle="" class="" style="top: 0px;"><div class="inner">
+<div class="header" style="background:#343a40 !important;">
+<div class="header-inner container">
+<div class="header-brand">
+<a class="header-brand-text" href="https://dedsec-47.github.io/WebChecklist/" title="Home">
+<h1 class="h2">
+<img src="https://dedsec-47.github.io/WebChecklist/assets/img/logo.png" style=" border-radius: 30%; width:215px; height:115px; margin-right:-53px;"> <span class="text-white">Bug </span><span class="text-primary">Bounty</span><span class="text-white"> Hackunter</span>
+</h1>
+</a>
+</div>
+
+</div>
+</div>
+      
+<!-- <div class="navbar navbar-expand-md">
+<div class="navbar-main collapse bg-dark navbar-dark">
+<ul class="nav navbar-nav container dropdown-effect-fade">
+<li class="nav-item"> <a class="nav-link dropdown-toggle" style="border:none; color:rgba(255,255,255,.75); background-color:#343a40" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false"><img src="https://dedsec-47.github.io/WebChecklist/assets/img/question-mark2.png"> Getting started</a>
+<div class="dropdown-menu dropdown-menu" style="background: #292b2c;">
+<a href="#" data-toggle="modal" data-target="#myModal" class="text-white dropdown-item" style="padding: 25px 20px 25px 20px !important; background: #292b2c; border:none; font-size:15px;"><img src="https://dedsec-47.github.io/WebChecklist/assets/img/vulnerability2.png" style="display:inline; width:45px;"> Learn about vulnerability types </a>
+<a href="https://dedsec-47.github.io/WebChecklist/getting-started" class="text-white dropdown-item" style="padding: 25px 20px 25px 20px !important; background: #292b2c; border:none; font-size:15px;"><img src="https://dedsec-47.github.io/WebChecklist/assets/img/start-up.png" style="display:inline; width:45px;"> Getting started in bug bounties </a>
+</div>
+</li>
+<li class="nav-item"> <a class="nav-link dropdown-toggle" style="border:none; color:rgba(255,255,255,.75); background-color:#343a40" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false"><img src="https://dedsec-47.github.io/WebChecklist/assets/img/computer-code.png"> Test your knowledge</a>
+<div class="dropdown-menu dropdown-menu" style="background: #292b2c;">
+<a style="padding: 25px 20px 25px 20px !important; background: #292b2c; border:none; font-size:15px;" class="text-white dropdown-item" href="https://dedsec-47.github.io/WebChecklist/training"><img src="https://dedsec-47.github.io/WebChecklist/assets/img/hacking.png" style="width: 45px;
+    display: inline;
+"> Free Web Application Challenges</a>
+<a style="padding: 25px 20px 25px 20px !important; background: #292b2c; border:none; font-size:15px;" class="text-white dropdown-item" href="https://dedsec-47.github.io/WebChecklist/membership"><img src="https://dedsec-47.github.io/WebChecklist/assets/img/hacking1.png" style="width: 45px;
+    display: inline;
+"> Membership</a>
+</div>
+</li>
+<li class="nav-item"> <a class="nav-link dropdown-toggle" style="border:none; color:rgba(255,255,255,.75); background-color:#343a40" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false"><img src="https://dedsec-47.github.io/WebChecklist/assets/img/computer-science.png"> Guides for your hunts </a>
+<div class="dropdown-menu dropdown-menu" style="background: #292b2c;">
+<a href="https://dedsec-47.github.io/WebChecklist/zseano" class="text-primary dropdown-item" style="padding: 20px 15px 20px 15px !important; background: #292b2c; border:none; font-size:15px;"><img src="https://dedsec-47.github.io/WebChecklist/assets/img/bookphoto.png" style="box-shadow: 0px 0px 15px #55a79a;  border-radius: 50%; width:50px; height:50px; margin-right:5px; display:inline;"> ZSeano's Methodology</a>
+<a style="background: #292b2c; border:none; font-size:15px;" href="https://dedsec-47.github.io/WebChecklist/guides/?type=notetaking" target="_blank" class="text-white dropdown-item"><img src="https://dedsec-47.github.io/WebChecklist/assets/img/scroll-letter.png" style="display:inline;"> Effective Note Taking for bug bounties</a>
+<a style="background: #292b2c; border:none; font-size:15px;" href="https://dedsec-47.github.io/WebChecklist/guides/?type=javascript_files" class="text-white dropdown-item"><img src="https://dedsec-47.github.io/WebChecklist/assets/img/scroll-letter.png" style="display:inline;"> Making use of JavaScript (.js) files</a>
+<a style="background: #292b2c; border:none; font-size:15px;" href="https://dedsec-47.github.io/WebChecklist/guides/?type=apitesting" class="text-white dropdown-item"><img src="https://dedsec-47.github.io/WebChecklist/assets/img/scroll-letter.png" style="display:inline;">Testing APIs</a>
+<a style="background: #292b2c; border:none; font-size:15px;" href="https://dedsec-47.github.io/WebChecklist/guides/?type=fileuploads" class="text-white dropdown-item"><img src="https://dedsec-47.github.io/WebChecklist/assets/img/scroll-letter.png" style="display:inline;"> Testing file uploads</a>
+<a style="background: #292b2c; border:none; font-size:15px;" href="https://dedsec-47.github.io/WebChecklist/guides/?type=bugbounty_toolkit" class="text-white dropdown-item"><img src="https://dedsec-47.github.io/WebChecklist/assets/img/scroll-letter.png" style="display:inline;"> Bug Bounty ToolKit</a>
+<a style="background: #292b2c; border:none; font-size:15px;" href="https://dedsec-47.github.io/WebChecklist/guides/?type=waybackmachine" class="text-white dropdown-item"><img src="https://dedsec-47.github.io/WebChecklist/assets/img/scroll-letter.png" style="display:inline;"> Finding bugs using WayBackMachine </a>
+</div>
+</li>
+<li class="nav-item"> <a class="nav-link dropdown-toggle" style="border:none; color:rgba(255,255,255,.75); background-color:#343a40" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false"><img src="https://dedsec-47.github.io/WebChecklist/assets/img/resources.png"> Useful Resources </a>
+<div class="dropdown-menu dropdown-menu" style="background: #292b2c;">
+<a href="https://dedsec-47.github.io/WebChecklist/disclosed" class="text-white dropdown-item" style="padding: 15px 10px 15px 10px !important; background: #292b2c; border:none; font-size:15px;"><img src="https://dedsec-47.github.io/WebChecklist/assets/img/h1.png" style="margin-right:5px; display:inline; width:20px; height:30px;"> Disclosed HackerOne Reports </a>
+<a href="https://dedsec-47.github.io/WebChecklist/publicprograms" class="text-white dropdown-item" style="padding: 15px 10px 15px 10px !important; background: #292b2c; border:none; font-size:15px;"><i class="fad fa-chart-area icon-2x text-info" aria-hidden="true"></i> Public HackerOne Programs </a>
+</div>
+</li>
+<li class="nav-item"> <a class="nav-link dropdown-toggle" style="border:none; color:rgba(255,255,255,.75); background-color:#343a40" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false"><img src="https://dedsec-47.github.io/WebChecklist/assets/img/users-idea.png"> Our community</a>
+<div class="dropdown-menu dropdown-menu" style="background: #292b2c;">
+<a style="padding: 25px 20px 25px 20px !important; background: #292b2c; border:none; font-size:15px;" href="https://dedsec-47.github.io/WebChecklist/viewhunters" target="_blank" class="text-white dropdown-item"><img src="https://dedsec-47.github.io/WebChecklist/assets/img/achievement.png" style="width: 45px;
+    display: inline;
+"> Endorsed Members</a>
+<a href="https://dedsec-47.github.io/WebChecklist/hackevents" class="text-white dropdown-item" style="padding: 15px 10px 15px 10px !important; background: #292b2c; border:none; font-size:15px;"><img src="https://dedsec-47.github.io/WebChecklist/assets/img/circle-cropped.png" style="margin-right:5px; display:inline; width:50px; height:50px;"> Hackevents </a>
+<div class="dropdown dropdown-submenu dropdown-menu-left">
+<a href="" style="padding: 25px 20px 25px 20px !important; background: #292b2c; border:none; font-size:15px;" class="text-white dropdown-item dropdown-toggle" id="headers-drop" data-toggle="dropdown" data-hover="dropdown" data-close-others="false"><img src="https://dedsec-47.github.io/WebChecklist/assets/img/author.png" style="
+    display: inline;width: 45px;
+"> Member Articles </a>
+<div class="dropdown-menu text-white" style="background: #292b2c; border:none;" role="menu" aria-labelledby="headers-drop">
+<a style="background: #292b2c; border:none; font-size:15px;" href="https://dedsec-47.github.io/WebChecklist/articles/?on=bongo-barker-experience" target="_blank" class=""><i class="fas fa-book-reader text-info" aria-hidden="true"></i> My BARKER Experience</a><br> — Contributed by <a class="text-info" href="https://dedsec-47.github.io/WebChecklist/hunter/bongo" target="_blank">bongo</a>
+<hr>
+<a style="background: #292b2c; border:none; font-size:15px;" href="https://dedsec-47.github.io/WebChecklist/articles/?on=hackingonbb" target="_blank" class=""><i class="fas fa-book-reader text-info" aria-hidden="true"></i> Reaching 1000+ reps on H1 and how you can do it too! </a><br> — Contributed by <a class="text-info" href="https://dedsec-47.github.io/WebChecklist/hunter/ibruteforce" target="_blank">iBruteforce</a>
+<hr>
+<a style="background: #292b2c; border:none; font-size:15px;" href="https://dedsec-47.github.io/WebChecklist/articles/?on=HackeventExperience" target="_blank" class=""><i class="fas fa-book-reader text-info" aria-hidden="true"></i> My Hackevent Experience </a><br> — Contributed by <a class="text-info" href="https://dedsec-47.github.io/WebChecklist/hunter/ibruteforce" target="_blank">iBruteforce</a>
+<hr>
+<a style="background: #292b2c; border:none; font-size:15px;" href="https://dedsec-47.github.io/WebChecklist/articles/?on=elieehel-bugbountyhunter" target="_blank" class=""><i class="fas fa-book-reader text-info" aria-hidden="true"></i> BugBountyHunter Experience &amp; Review </a><br> — Contributed by <a class="text-info" href="https://dedsec-47.github.io/WebChecklist/hunter/eliee" target="_blank">eliee</a>
+<hr>
+<a style="background: #292b2c; border:none; font-size:15px;" href="https://dedsec-47.github.io/WebChecklist/articles/?on=experience" target="_blank" class=""><i class="fas fa-book-reader text-info" aria-hidden="true"></i>  Review </a><br> — Contributed by <a class="text-info" href="https://dedsec-47.github.io/WebChecklist/hunter/gprime31" target="_blank">gprime31</a>
+<hr>
+<a style="background: #292b2c; border:none; font-size:15px;" href="https://dedsec-47.github.io/WebChecklist/articles/?on=mass-assignment-and-learning-new-things" target="_blank" class=""><i class="fas fa-book-reader text-info" aria-hidden="true"></i> <span class="badge badge-warning" style="display: inline !important;">Challenge Available</span> Mass assignement and learning new things </a><br> — Contributed by <a class="text-info" href="https://dedsec-47.github.io/WebChecklist/hunter/jomar" target="_blank">Jomar</a>
+<hr>
+<a style="background: #292b2c; border:none; font-size:15px;" href="https://dedsec-47.github.io/WebChecklist/articles/?on=hackingonbb" target="_blank" class=""><i class="fas fa-book-reader text-info" aria-hidden="true"></i> Reaching 1000+ reps on H1 and how you can do it too! </a><br> — Contributed by <a class="text-info" href="https://dedsec-47.github.io/WebChecklist/hunter/ibruteforce" target="_blank">iBruteforce</a>
+</div>
+</div>
+</div>
+</li></ul></div>
+
+
+</div>-->
+      
+</div>
+</div></div>
 <ul id="myUL">
   <li><span class="caret">Application Entry Points</span>
     <ul class="nested">
@@ -1028,30 +1078,7 @@ Host=IP; If There Is Try To Change IP To Your IP To Get SSRF</li>
 
   </ul>
 
+
 </body>
-<script>
-var toggler = document.getElementsByClassName("caret");
-var i;
 
-for (i = 0; i < toggler.length; i++) {
-  toggler[i].addEventListener("click", function() {
-    this.parentElement.querySelector(".nested").classList.toggle("active");
-    this.classList.toggle("caret-down");
-  });
-}
-
-document.addEventListener('DOMContentLoaded', function() {
-  var list = document.getElementById('myUL');
-  list.addEventListener('change', function(ev) {
-    if (ev.target.tagName === 'INPUT' && ev.target.type === 'checkbox') {
-      var listItem = ev.target.parentNode; 
-      if (ev.target.checked) {
-        listItem.classList.add('checked'); 
-      } else {
-        listItem.classList.remove('checked');
-      }
-    }
-  }, false);
-});
-</script>
 </html>
