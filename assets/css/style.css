@@ -11,7 +11,7 @@ a.text-primary:focus {
 
 .header {
     background: #fff;
-    border-bottom: 1px solid rgb(249 85 5);
+    border-bottom: 7px solid rgb(249 85 5);
     color: #1b1b1b;
     height: auto;
     padding: 25px 0 25px 0;
@@ -20,6 +20,7 @@ a.text-primary:focus {
     width: 100%;
     right: 0;
 }
+
 
 
 /* Remove default bullets */
@@ -67,4 +68,12 @@ ul li.checked {
   background: #888;
   color: #fff;
   text-decoration: line-through;
+}
+
+#footer {
+    background: #343a40;
+    padding: 60px 0 30px;
+    color: #a2a2a2;
+    color: rgba(255, 255, 255, 0.8);
+    border-top: 5px solid rgb(249 85 5);
 }
